@@ -8,14 +8,30 @@
 #define OBEDIENT_H
 
 #include "Arduino.h"
-	
+#include <Servo.h>
+
 class Obedient
 {
 	public:
-		Obedient(int pin);
-		void foward(int second);
-		void backward(int second);
-		void 
+		Obedient(int servoLeft, int servoRight);
+
+		//Methods with quantity
+		void fowardSecond(int second);
+		void backwardSecond(int second);
+
+		//Methods without quantity
+		void foward();
+		void backward();
+		void turnBack();
+		void turnLeft();
+		void turnRight();
+		void circle();
+
+	private:
+		int _servoLeft, _servoRight;
+		Servo left, right;
+		void turnDegree(int degree);
+		void move(int dir, int s);
 
 };
 #endif
