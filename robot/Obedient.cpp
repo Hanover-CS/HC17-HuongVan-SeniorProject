@@ -6,7 +6,6 @@
 
 #include "Arduino.h"
 #include <Servo.h>
-#include "Morse.h"
 
 //Constructor with pin
 Obedient::Obedient(int servoLeft, int servoRight)
