@@ -33,7 +33,14 @@ void turnDegree(int dir, int degree)
 
 void move(int dir, int s)
 {
-
+	if (dir == 1) {
+		servoLeft.writeMicroseconds(1600);
+  		servoRight.writeMicroseconds(1400);
+	} else {
+		left.writeMicroseconds(1400);
+  		right.writeMicroseconds(1600);
+	}
+	delay(s * 1000);
 }
 
 /**************************END***********************************************/
@@ -42,17 +49,13 @@ void move(int dir, int s)
 //Foward with Second
 void Obedient::fowardSecond(int second)
 {
- 	left.writeMicroseconds(1600);
-  	right.writeMicroseconds(1400);
-  	delay(second * 1000);
+ 	move(1, second);
 }
 
 //Move backward with Second
 void Obedient::backwardSecond(int second)
 {
-  	left.writeMicroseconds(1400);
-  right.writeMicroseconds(1600);
-  delay(second * 1000);
+  	move(0, second);	
 }
 
 //Default Foward
