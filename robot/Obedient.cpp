@@ -18,7 +18,7 @@ Obedient::Obedient(int servoLeft, int servoRight)
 }
 
 /**************************Private Method************************************/
-void turnDegree(int dir, int degree)
+void Obedient::turnDegree(int dir, int degree)
 {
 	if (dir == 1) {
 		servoLeft.writeMicroseconds(1300);
@@ -31,7 +31,7 @@ void turnDegree(int dir, int degree)
  	delay(turnD);
 }
 
-void move(int dir, int s)
+void Obedient::move(int dir, int s)
 {
 	if (dir == 1) {
 		servoLeft.writeMicroseconds(1600);
@@ -56,6 +56,14 @@ void Obedient::fowardSecond(int second)
 void Obedient::backwardSecond(int second)
 {
   	move(0, second);	
+}
+
+//Stop with Second
+void Obedient::stopSecond(int second)
+{
+  	servoLeft.writeMicroseconds(1500);
+  	servoRight.writeMicroseconds(1500);
+  	delay(second * 1000);
 }
 
 //Default Foward

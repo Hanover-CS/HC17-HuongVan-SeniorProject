@@ -18,8 +18,10 @@ class Obedient
 		//Methods with quantity
 		void fowardSecond(int second);
 		void backwardSecond(int second);
+		void stopSecond(int second);
 
 		//Methods without quantity
+		void stop();
 		void foward();
 		void backward();
 		void turnBackLeft();
