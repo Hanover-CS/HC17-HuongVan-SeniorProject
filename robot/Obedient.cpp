@@ -6,10 +6,10 @@
 
 #include "Arduino.h"
 #include <Servo.h>
+#include "Obedient.h"
 
-class Obedient
-{
-public:
+
+
 //Constructor with pin
 Obedient::Obedient(int servoLeft, int servoRight)
 {
@@ -95,8 +95,6 @@ void Obedient::circleRight()
 }
 /**************************END*******************************************/
 
-private:
-
 /**************************Private Method************************************/
 void Obedient::turnDegree(int dir, int degree)
 {
@@ -124,5 +122,3 @@ void Obedient::move(int dir, int s)
 }
 
 /**************************END***********************************************/
-
-}
