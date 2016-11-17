@@ -82,7 +82,7 @@ void Obedient::turnBackRight()
 //Turn Left
 void Obedient::turnLeft()
 {
-
+	turnDegree(1, 90);
 }
 
 //Turn right
