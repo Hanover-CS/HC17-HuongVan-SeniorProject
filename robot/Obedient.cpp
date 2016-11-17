@@ -7,6 +7,9 @@
 #include "Arduino.h"
 #include <Servo.h>
 
+class Obedient
+{
+public:
 //Constructor with pin
 Obedient::Obedient(int servoLeft, int servoRight)
 {
@@ -15,34 +18,6 @@ Obedient::Obedient(int servoLeft, int servoRight)
 	left.attach(_servoLeft);
 	right.attach(_servoRight);
 }
-
-/**************************Private Method************************************/
-void Obedient::turnDegree(int dir, int degree)
-{
-	if (dir == 1) {
-		servoLeft.writeMicroseconds(1300);
- 		servoRight.writeMicroseconds(1300);
-	} else {
-		servoLeft.writeMicroseconds(1700);
- 		servoRight.writeMicroseconds(1700);
-	}
- 	int turnD = degree * 1500 / 180;
- 	delay(turnD);
-}
-
-void Obedient::move(int dir, int s)
-{
-	if (dir == 1) {
-		servoLeft.writeMicroseconds(1600);
-  		servoRight.writeMicroseconds(1400);
-	} else {
-		left.writeMicroseconds(1400);
-  		right.writeMicroseconds(1600);
-	}
-	delay(s * 1000);
-}
-
-/**************************END***********************************************/
 
 /**************************Public Method*************************************/
 //Foward with Second
@@ -119,3 +94,35 @@ void Obedient::circleRight()
 	turnDegree(0, 360);
 }
 /**************************END*******************************************/
+
+private:
+
+/**************************Private Method************************************/
+void Obedient::turnDegree(int dir, int degree)
+{
+	if (dir == 1) {
+		servoLeft.writeMicroseconds(1300);
+ 		servoRight.writeMicroseconds(1300);
+	} else {
+		servoLeft.writeMicroseconds(1700);
+ 		servoRight.writeMicroseconds(1700);
+	}
+ 	int turnD = degree * 1500 / 180;
+ 	delay(turnD);
+}
+
+void Obedient::move(int dir, int s)
+{
+	if (dir == 1) {
+		servoLeft.writeMicroseconds(1600);
+  		servoRight.writeMicroseconds(1400);
+	} else {
+		left.writeMicroseconds(1400);
+  		right.writeMicroseconds(1600);
+	}
+	delay(s * 1000);
+}
+
+/**************************END***********************************************/
+
+}
