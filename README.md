@@ -30,13 +30,21 @@ https://www.arduino.cc/en/hacking/libraries
 After placing Obedient library into your libraries repository, now you can include the "Obedient.h" in your sketch.
 
 Here is the example code of to include the "Obedient.h":
-#include "Obedient.h"
-//13 is the pin number you want to connect the left servo, and 14 is the pin number you want to connect to right servo
+
+`#include "Obedient.h"
+
+/* 13 is the pin number you want to connect the left 
+* servo, and 14 is the pin number you want to connect 
+* to right servo
+*/
+
 Obedient obedient(13, 14);
+
 void setup()
 {
 
 }
+
 void loop()
 {
 	//Obedient will move foward and stop 2 second
@@ -46,20 +54,20 @@ void loop()
 	//Obedient will move backward
 	obedient.backward();
 	obedient.stop(2);
-}
+}`
 
 These followings are the methods you can use when playing with Obedient:
 1. Methods with quantity
-	fowardSecond(int second);
-	backwardSecond(int second);
+	* fowardSecond(int second);
+	* backwardSecond(int second);
 
 2. Methods without quantity
-	foward();
-	backward();
-	turnBackLeft();
-	turnBackRight();
-	turnLeft();
-	turnRight();
-	circleLeft();
-	circleRight();
+	* foward();
+	* backward();
+	* turnBackLeft();
+	* turnBackRight();
+	* turnLeft();
+	* turnRight();
+	* circleLeft();
+	* circleRight();
 
