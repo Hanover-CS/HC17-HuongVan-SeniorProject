@@ -100,6 +100,6 @@ void Obedient::circleLeft()
 //TUrn 1 right circle around 
 void Obedient::circleRight()
 {
-	
+	turnDegree(0, 360);
 }
 /**************************END*******************************************/
