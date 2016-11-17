@@ -99,11 +99,11 @@ void Obedient::circleRight()
 void Obedient::turnDegree(int dir, int degree)
 {
 	if (dir == 1) {
-		servoLeft.writeMicroseconds(1300);
- 		servoRight.writeMicroseconds(1300);
+		left.writeMicroseconds(1300);
+ 		right.writeMicroseconds(1300);
 	} else {
-		servoLeft.writeMicroseconds(1700);
- 		servoRight.writeMicroseconds(1700);
+		left.writeMicroseconds(1700);
+ 		right.writeMicroseconds(1700);
 	}
  	int turnD = degree * 1500 / 180;
  	delay(turnD);
@@ -112,8 +112,8 @@ void Obedient::turnDegree(int dir, int degree)
 void Obedient::move(int dir, int s)
 {
 	if (dir == 1) {
-		servoLeft.writeMicroseconds(1600);
-  		servoRight.writeMicroseconds(1400);
+		left.writeMicroseconds(1600);
+  		right.writeMicroseconds(1400);
 	} else {
 		left.writeMicroseconds(1400);
   		right.writeMicroseconds(1600);
