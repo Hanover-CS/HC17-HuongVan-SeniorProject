@@ -67,16 +67,22 @@ void Obedient::foward()
   backwardSecond(5);
 }
 
-//Turn back 
-void Obedient::turnBack()
+//Turn back left
+void Obedient::turnBackLeft()
 {
-	turnDegree(180);
+	turnDegree(1, 180);
+}
+
+//Turn back right
+void Obedient::turnBackRight()
+{
+	turnDegree(0, 180);
 }
 
 //Turn Left
 void Obedient::turnLeft()
 {
-	turnDegree(90)
+
 }
 
 //Turn right
