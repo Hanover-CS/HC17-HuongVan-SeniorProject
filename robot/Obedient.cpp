@@ -18,10 +18,15 @@ Obedient::Obedient(int servoLeft, int servoRight)
 }
 
 /**************************Private Method************************************/
-void turnDegree(int degree)
+void turnDegree(int dir, int degree)
 {
-	servoLeft.writeMicroseconds(1300);
- 	servoRight.writeMicroseconds(1300);
+	if (dir == 1) {
+		servoLeft.writeMicroseconds(1300);
+ 		servoRight.writeMicroseconds(1300);
+	} else {
+		servoLeft.writeMicroseconds(1700);
+ 		servoRight.writeMicroseconds(1700);
+	}
  	int turnD = degree * 1500 / 180;
  	delay(turnD);
 }
@@ -71,7 +76,7 @@ void Obedient::turnBack()
 //Turn Left
 void Obedient::turnLeft()
 {
-
+	turnDegree(90)
 }
 
 //Turn right
