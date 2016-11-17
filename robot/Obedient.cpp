@@ -66,6 +66,12 @@ void Obedient::stopSecond(int second)
   	delay(second * 1000);
 }
 
+//Default stop
+void Obedient::stop()
+{
+	stopSecond(10);
+}
+
 //Default Foward
 void Obedient::foward()
 {
