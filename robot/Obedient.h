@@ -26,7 +26,8 @@ class Obedient
 		void turnBackRight();
 		void turnLeft();
 		void turnRight();
-		void circle();
+		void circleLeft();
+		void circleRight();
 
 	private:
 		int _servoLeft, _servoRight;

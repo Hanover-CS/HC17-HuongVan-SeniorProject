@@ -91,8 +91,14 @@ void Obedient::turnRight()
 	turnDegree(0, 90);
 }
 
-//TUrn 1 circle around
-void Obedient::circle()
+//TUrn 1 left circle around 
+void Obedient::circleLeft()
+{
+
+}
+
+//TUrn 1 right circle around 
+void Obedient::circleRight()
 {
 
 }
