@@ -22,7 +22,7 @@ void turnDegree(int degree)
 {
 	servoLeft.writeMicroseconds(1300);
  	servoRight.writeMicroseconds(1300);
- 	int turnD = (int) degree * 1500 / 180;
+ 	int turnD = degree * 1500 / 180;
  	delay(turnD);
 }
 
@@ -65,7 +65,7 @@ void Obedient::foward()
 //Turn back 
 void Obedient::turnBack()
 {
-
+	turnDegree(180);
 }
 
 //Turn Left
