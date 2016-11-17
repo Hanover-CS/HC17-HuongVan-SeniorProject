@@ -31,22 +31,22 @@ After placing Obedient library into your libraries repository, now you can inclu
 
 Here is the example code of to include the "Obedient.h":
 
-`#include "Obedient.h"
+`#include "Obedient.h"`
 
-/* 13 is the pin number you want to connect the left 
-* servo, and 14 is the pin number you want to connect 
-* to right servo
-*/
+`/* 13 is the pin number you want to connect the left 
+/* servo, and 14 is the pin number you want to connect 
+/* to right servo`
 
-Obedient obedient(13, 14);
+`Obedient obedient(13, 14);`
 
-void setup()
+`void setup()
 {
 
-}
+}`
 
-void loop()
+`void loop()
 {
+	
 	//Obedient will move foward and stop 2 second
 	obedient.foward();
 	obedient.stop(2);
