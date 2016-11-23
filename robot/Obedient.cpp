@@ -35,8 +35,8 @@ void Obedient::backwardSecond(int second)
 //Stop with Second
 void Obedient::stopSecond(int second)
 {
-  	servoLeft.writeMicroseconds(1500);
-  	servoRight.writeMicroseconds(1500);
+  	left.writeMicroseconds(1500);
+  	right.writeMicroseconds(1500);
   	delay(second * 1000);
 }
 
@@ -53,7 +53,7 @@ void Obedient::foward()
 }
 
 //Default Backward
-void Obedient::foward()
+void Obedient::backward()
 {
   backwardSecond(5);
 }
