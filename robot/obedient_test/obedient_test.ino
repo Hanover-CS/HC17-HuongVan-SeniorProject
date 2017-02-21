@@ -28,10 +28,10 @@ void loop() {
   obedient.fowardSecond(10);
   obedient.stop();
 
-//  //Test backward function with second
-//  obedient.backwardSecond(10);
-//  obedient.stop();
-//
+  //Test backward function with second
+  obedient.backwardSecond(10);
+  obedient.stop();
+
 //  //Test turn back from the left
 //  obedient.turnBackLeft();
 //  obedient.stopSecond(2);
