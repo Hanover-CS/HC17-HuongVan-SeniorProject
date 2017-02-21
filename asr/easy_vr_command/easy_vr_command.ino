@@ -1,8 +1,5 @@
 #include "Arduino.h"
-#include <Servo.h>
-
-Servo servoLeft;
-Servo servoRight;
+#include <Obedient.h>
 
 #if !defined(SERIAL_PORT_MONITOR)
   #error "Arduino version not supported. Please update your IDE to the latest version."
@@ -48,11 +45,11 @@ enum Group1
 
 
 int8_t group, idx;
+Obedient obedient(10, 11);
 
 void setup()
 {
-  servoLeft.attach(10);
-  servoRight.attach(11);
+  obedient.attachServo();
   // setup PC serial port
   pcSerial.begin(9600);
 
@@ -173,6 +170,8 @@ void action()
       case G0_OBEDIENT:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
+        tone(5, 1500, 1000); //backward sound
+        delay(1000);
         group = GROUP_1;
         break;
       }
@@ -189,11 +188,8 @@ void action()
         // group = GROUP_X; <-- or jump to another group X for composite commands
         tone(5, 1000, 1000); //backward sound
         delay(1000);
-        servoLeft.writeMicroseconds(1400);
-        servoRight.writeMicroseconds(1600);
-        delay(3000);
-        servoLeft.writeMicroseconds(1500);
-        servoRight.writeMicroseconds(1500);
+        obedient.backward();
+        obedient.stopSecond(1);
         break;
       case G1_TURNLEFT:
         // write your action code here
