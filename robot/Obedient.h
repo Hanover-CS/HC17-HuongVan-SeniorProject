@@ -4,8 +4,8 @@
 	Released into public domain.
 */
 
-#ifndef OBEDIENT_H
-#define OBEDIENT_H
+#ifndef Obedient_h
+#define Obedient_h
 
 #include "Arduino.h"
 #include <Servo.h>
@@ -13,6 +13,7 @@
 class Obedient
 {
 	public:
+		//Constructor
 		Obedient(int servoLeft, int servoRight);
 
 		//Methods with quantity
