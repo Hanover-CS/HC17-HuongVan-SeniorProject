@@ -100,15 +100,18 @@ void Obedient::circleRight()
 /**************************Private Method************************************/
 void Obedient::turnDegree(int dir, int degree)
 {
+	degree = degree * (int)(1500/180);
 	if (dir == 1) {
 		left.writeMicroseconds(1300);
  		right.writeMicroseconds(1300);
+ 		Serial.begin(9600);
+ 		Serial.print(degree);
+ 		delay(degree);
 	} else {
 		left.writeMicroseconds(1700);
  		right.writeMicroseconds(1700);
+ 		delay(degree);
 	}
- 	int turnD = (degree * 1500) / 180;
- 	delay(turnD);
 }
 
 void Obedient::move(int dir, int s)

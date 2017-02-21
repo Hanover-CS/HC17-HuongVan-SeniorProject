@@ -32,10 +32,10 @@ void loop() {
   obedient.backwardSecond(10);
   obedient.stop();
 
-//  //Test turn back from the left
-//  obedient.turnBackLeft();
-//  obedient.stopSecond(2);
-//
+  //Test turn back from the left
+  obedient.turnBackLeft();
+  obedient.stopSecond(2);
+
 //  //Test turn back from the right
 //  obedient.turnBackRight();
 //  obedient.stop();
