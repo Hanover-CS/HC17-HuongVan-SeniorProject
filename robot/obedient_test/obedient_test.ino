@@ -23,11 +23,11 @@ void loop() {
   obedient.foward();
   obedient.backward();
   obedient.stopSecond(5);
-//
-//  //Test foward function with second
-//  obedient.fowardSecond(10);
-//  obedient.stop();
-//
+
+  //Test foward function with second
+  obedient.fowardSecond(10);
+  obedient.stop();
+
 //  //Test backward function with second
 //  obedient.backwardSecond(10);
 //  obedient.stop();
