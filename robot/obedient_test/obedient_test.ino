@@ -52,7 +52,7 @@ void loop() {
   obedient.circleLeft();
   obedient.stop();
 
-//  //Test circle around from the right
-//  obedient.circleRight();
-//  obedient.stop();
+  //Test circle around from the right
+  obedient.circleRight();
+  obedient.stop();
 }
