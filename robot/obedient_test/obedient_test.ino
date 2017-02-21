@@ -19,10 +19,10 @@ void loop() {
   obedient.foward();
   obedient.stopSecond(5);
 
-//  //Test backward fuction it will run for 15 second
-//  obedient.foward();
-//  obedient.foward();
-//  obedient.stopSecond(5);
+  //Test backward fuction it will run for 15 second
+  obedient.foward();
+  obedient.backward();
+  obedient.stopSecond(5);
 //
 //  //Test foward function with second
 //  obedient.fowardSecond(10);
