@@ -8,16 +8,13 @@
 #define Obedient_h
 
 #include "Arduino.h"
-#include "Servo.h"
+#include <Servo.h>
 
 class Obedient
 {
 	public:
 		//Constructor
 		Obedient(int servoLeft, int servoRight);
-
-		//Initial Servos
-		void attachServo();
 
 		//Methods with quantity
 		void fowardSecond(int second);
@@ -37,8 +34,10 @@ class Obedient
 
 	private:
 		int _servoLeft, _servoRight;
-		Servo left, right;
+		Servo left;
+		Servo right;
 		void turnDegree(int dir, int degree);
 		void move(int dir, int s);
+
 };
 #endif

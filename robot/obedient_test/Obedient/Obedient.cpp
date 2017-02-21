@@ -14,14 +14,11 @@ Obedient::Obedient(int servoLeft, int servoRight)
 {
 	_servoLeft = servoLeft;
 	_servoRight = servoRight;
-}
-
-/**************************Public Method*************************************/
-void Obedient::attachServo() {
 	left.attach(_servoLeft);
 	right.attach(_servoRight);
 }
 
+/**************************Public Method*************************************/
 //Foward with Second
 void Obedient::fowardSecond(int second)
 {
@@ -116,12 +113,11 @@ void Obedient::move(int dir, int s)
 	if (dir == 1) {
 		left.writeMicroseconds(1600);
   		right.writeMicroseconds(1400);
-  		delay(s * 1000);
 	} else {
 		left.writeMicroseconds(1400);
   		right.writeMicroseconds(1600);
-  		delay(s * 1000);
 	}
+	delay(s * 1000);
 }
 
 /**************************END***********************************************/
