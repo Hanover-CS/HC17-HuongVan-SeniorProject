@@ -48,10 +48,10 @@ void loop() {
   obedient.turnRight();
   obedient.stopSecond(2);
 
-//  //Test circle around from the left
-//  obedient.circleLeft();
-//  obedient.stop();
-//
+  //Test circle around from the left
+  obedient.circleLeft();
+  obedient.stop();
+
 //  //Test circle around from the right
 //  obedient.circleRight();
 //  obedient.stop();
