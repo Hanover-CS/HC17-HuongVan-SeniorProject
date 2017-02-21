@@ -1,4 +1,9 @@
 #include "Arduino.h"
+#include <Servo.h>
+
+Servo servoLeft;
+Servo servoRight;
+
 #if !defined(SERIAL_PORT_MONITOR)
   #error "Arduino version not supported. Please update your IDE to the latest version."
 #endif
@@ -46,6 +51,8 @@ int8_t group, idx;
 
 void setup()
 {
+  servoLeft.attach(10);
+  servoRight.attach(11);
   // setup PC serial port
   pcSerial.begin(9600);
 
@@ -166,6 +173,7 @@ void action()
       case G0_OBEDIENT:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
+        group = GROUP_1;
         break;
       }
       break;
@@ -179,6 +187,13 @@ void action()
       case G1_BACKWARD:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
+        tone(5, 1000, 1000); //backward sound
+        delay(1000);
+        servoLeft.writeMicroseconds(1400);
+        servoRight.writeMicroseconds(1600);
+        delay(3000);
+        servoLeft.writeMicroseconds(1500);
+        servoRight.writeMicroseconds(1500);
         break;
       case G1_TURNLEFT:
         // write your action code here
