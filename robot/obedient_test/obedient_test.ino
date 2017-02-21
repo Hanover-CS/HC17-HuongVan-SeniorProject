@@ -40,10 +40,10 @@ void loop() {
   obedient.turnBackRight();
   obedient.stop();
 
-//  //Test turn left
-//  obedient.turnLeft();
-//  obedient.stop();
-//
+  //Test turn left
+  obedient.turnLeft();
+  obedient.stop();
+
 //  //Test turn right
 //  obedient.turnRight();
 //  obedient.stop();
