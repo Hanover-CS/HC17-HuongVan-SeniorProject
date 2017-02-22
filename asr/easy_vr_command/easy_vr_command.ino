@@ -159,6 +159,10 @@ void loop()
     }
   }
 }
+void tonePlay(int sound1, int frequency) {
+  tone(5, sound1, frequency);
+  delay(1000);
+}
 
 void action()
 {
@@ -170,8 +174,7 @@ void action()
       case G0_OBEDIENT:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
-        tone(5, 1500, 1000); //backward sound
-        delay(1000);
+        tonePlay(1500, 1000); //backward sound
         group = GROUP_1;
         break;
       }
@@ -180,26 +183,17 @@ void action()
       switch (idx)
       {
       case G1_FOWARD:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
-        tone(5, 1000, 1000); //backward sound
-        delay(1000);
+        tonePlay(1000, 1000);
         obedient.foward();
         obedient.stopSecond(1);
         break;
       case G1_BACKWARD:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
-        tone(5, 1000, 1000); //backward sound
-        delay(1000);
+        tonePlay(1000, 1000);
         obedient.backward();
         obedient.stopSecond(1);
         break;
       case G1_TURNLEFT:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
-        tone(5, 1000, 1000);
-        delay(1000);
+        tonePlay(1000, 1000);
         obedient.turnLeft();
         obedient.stopSecond(1);
         break;
