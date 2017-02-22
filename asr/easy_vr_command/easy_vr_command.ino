@@ -185,17 +185,14 @@ void action()
       case G1_FOWARD:
         tonePlay(1000, 1000);
         obedient.foward();
-        obedient.stopSecond(1);
         break;
       case G1_BACKWARD:
         tonePlay(1000, 1000);
         obedient.backward();
-        obedient.stopSecond(1);
         break;
       case G1_TURNLEFT:
         tonePlay(1000, 1000);
         obedient.turnLeft();
-        obedient.stopSecond(1);
         break;
       case G1_TURNRIGHT:
         // write your action code here
