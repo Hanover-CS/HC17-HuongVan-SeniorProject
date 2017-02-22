@@ -36,10 +36,10 @@ enum Group1
 {
   G1_FOWARD = 0,
   G1_BACKWARD = 1,
-  G1_TURNLEFT = 2,
-  G1_TURNRIGHT = 3,
-  G1_AROUNDFROMLEFT = 4,
-  G1_RIGHTTURNAROUND = 5,
+  G1_LEFTTURN = 2,
+  G1_RIGHTTURN = 3,
+  G1_TURNBACKLEFT = 4,
+  G1_TURNBACKRIGHT = 5,
   G1_STOP = 6,
 };
 
@@ -190,19 +190,19 @@ void action()
         tonePlay(1000, 1000);
         obedient.backward();
         break;
-      case G1_TURNLEFT:
+      case G1_LEFTTURN:
         tonePlay(1000, 1000);
         obedient.turnLeft();
         break;
-      case G1_TURNRIGHT:
+      case G1_RIGHTTURN:
         tonePlay(1000, 1000);
         obedient.turnRight();
         break;
-      case G1_AROUNDFROMLEFT:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
+      case G1_TURNBACKLEFT:
+        tonePlay(1000, 1000);
+        obedient.turnBackLeft();
         break;
-      case G1_RIGHTTURNAROUND:
+      case G1_TURNBACKRIGHT:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
         break;
