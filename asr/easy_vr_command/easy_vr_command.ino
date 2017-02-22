@@ -195,8 +195,8 @@ void action()
         obedient.turnLeft();
         break;
       case G1_TURNRIGHT:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
+        tonePlay(1000, 1000);
+        obedient.turnRight();
         break;
       case G1_AROUNDFROMLEFT:
         // write your action code here
