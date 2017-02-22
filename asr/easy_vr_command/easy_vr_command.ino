@@ -182,6 +182,10 @@ void action()
       case G1_FOWARD:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
+        tone(5, 1000, 1000); //backward sound
+        delay(1000);
+        obedient.foward();
+        obedient.stopSecond(1);
         break;
       case G1_BACKWARD:
         // write your action code here
