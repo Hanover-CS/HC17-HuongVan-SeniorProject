@@ -114,8 +114,6 @@ void Obedient::turnDegree(int dir, int degree)
 	if (dir == 1) {
 		left.writeMicroseconds(1300);
  		right.writeMicroseconds(1300);
- 		Serial.begin(9600);
- 		Serial.print(degree);
  		delay(degree);
 	} else {
 		left.writeMicroseconds(1700);
