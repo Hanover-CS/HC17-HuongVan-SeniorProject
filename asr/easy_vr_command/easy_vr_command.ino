@@ -198,6 +198,10 @@ void action()
       case G1_TURNLEFT:
         // write your action code here
         // group = GROUP_X; <-- or jump to another group X for composite commands
+        tone(5, 1000, 1000);
+        delay(1000);
+        obedient.turnLeft();
+        obedient.stopSecond(1);
         break;
       case G1_TURNRIGHT:
         // write your action code here
