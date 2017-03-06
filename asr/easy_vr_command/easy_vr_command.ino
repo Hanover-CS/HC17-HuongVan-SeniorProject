@@ -169,15 +169,16 @@ void action()
     switch (group)
     {
     case GROUP_0:
-      switch (idx)
-      {
-      case G0_OBEDIENT:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
-        tonePlay(1500, 1000); //backward sound
-        group = GROUP_1;
-        break;
-      }
+//      switch (idx)
+//      {
+//      case G0_OBEDIENT:
+//        // write your action code here
+//        // group = GROUP_X; <-- or jump to another group X for composite commands
+//        tonePlay(1500, 1000); //backward sound
+//        group = GROUP_1;
+//        break;
+//      }
+      trigger(idx);
       break;
     case GROUP_1:
       switch (idx)
@@ -214,3 +215,13 @@ void action()
       break;
     }
 }
+
+void trigger(int idx) {
+  switch(idx) {
+    case G0_OBEDIENT:
+       tonePlay(1500, 1000);
+       group = GROUP_1;
+       break;
+  }
+}
+
