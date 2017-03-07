@@ -38,5 +38,6 @@ void test_basic() {
 
 int main() {
 	test_trigger();
+	test_basic();
 	return 0;
 }
