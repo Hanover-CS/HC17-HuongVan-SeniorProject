@@ -96,7 +96,7 @@ void test_numeric() {
 }
 void test_numeric_foward() {
 	for (int i = 0; i < 20; i++) {
-		assert(foward_with_time(i) == 100 + i);
+		assert(foward_with_time(i) == i);
 	}
 }
 

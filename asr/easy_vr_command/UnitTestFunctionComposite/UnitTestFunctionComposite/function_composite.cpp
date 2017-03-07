@@ -70,17 +70,17 @@ int trigger(int idx) {
 int basic(int idx) {
 	switch(idx) {
 	    case G1_FOWARD:
-			return G1_FOWARD;
+			return obedient.foward();
 		case G1_BACKWARD:
-			return G1_BACKWARD;
+			return obedient.backward();;
 		case G1_LEFTTURN:
-			return G1_LEFTTURN;
+			return obedient.turnLeft();;
 		case G1_RIGHTTURN:
-			return G1_RIGHTTURN;
+			return obedient.turnRight();
 		case G1_TURNBACKLEFT:
-			return G1_TURNBACKLEFT;
+			return obedient.turnBackLeft();
 		case G1_TURNBACKRIGHT:
-			return G1_TURNBACKRIGHT;
+			return obedient.turnBackRight();
 	}
 	return -1;
 }
@@ -113,6 +113,19 @@ int foward_with_time(int idx) {
 	int result;
 	
 	result = obedient.fowardSecond(idx);
+
+	return result;
+}
+
+/* This is the function that passed argument to backward function that will tell Obedient
+*  to move forward for that seconds of time
+*  This is only work if we passed the approriate idx's, which is 0-19, and not working
+*  at all for other cases
+*/
+int backward_with_time(int idx) {
+	int result;
+
+	result = obedient.backwardSecond(idx);
 
 	return result;
 }

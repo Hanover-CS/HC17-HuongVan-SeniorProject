@@ -26,4 +26,11 @@ int direction(int idx);
 */
 int foward_with_time(int idx);
 
+/* This is the function that passed argument to backward function that will tell Obedient
+*  to move forward for that seconds of time
+*  This is only work if we passed the approriate idx's, which is 0-19, and not working
+*  at all for other cases
+*/
+int backward_with_time(int idx);
+
 #endif
