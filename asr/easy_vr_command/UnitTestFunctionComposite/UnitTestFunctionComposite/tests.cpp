@@ -25,6 +25,17 @@ void test_trigger() {
 	group = -1;
 }
 
+void test_basic() {
+	int result = basic(-1);
+	assert(result == -1);
+	result = basic(7);
+	assert(result == -1);
+	for (int i = 0; i < 7; i++) {
+		result = basic(i);
+		assert(result == i);
+	}
+}
+
 int main() {
 	test_trigger();
 	return 0;
