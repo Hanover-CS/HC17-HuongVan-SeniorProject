@@ -94,9 +94,22 @@ void test_numeric() {
 	result = direction(G2_RIGHTTURN);
 	assert(result == G2_RIGHTTURN);
 }
+
+/* This is a cheat code for function with number:
+*  foward will range 0-19 for the time corresponding of group3 0-19
+*  backward will range 100-119 for the time corresponding group3 0-19 
+*  turnLeft will range 200-219 for the angle corresponding group4 0-19
+*  turnRight will range 300-319 for the angle corresponding group4 0-19
+*/
 void test_numeric_foward() {
 	for (int i = 0; i < 20; i++) {
 		assert(foward_with_time(i) == i);
+	}
+}
+
+void test_numeric_backward() {
+	for (int i = 0; i < 20; i++) {
+		assert(foward_with_time(i) == 100 + i);
 	}
 }
 
