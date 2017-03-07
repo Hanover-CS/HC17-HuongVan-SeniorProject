@@ -47,7 +47,8 @@ extern const int G3_20 = 19;
 
 extern int group = -1;
 
-
+Obedient obedient(10, 11);
+obedient.attachServo();
 
 /* This is the function that handle the trigger to start the Obedient
 * This is only work if we passed the right idx, which is 0, and not working
@@ -109,5 +110,9 @@ int direction(int idx) {
 *  at all for other cases
 */
 int foward_with_time(int idx) {
-	return foward(idx);
+	int result;
+	
+	result = obedient.fowardSecond(idx);
+
+	return result;
 }
