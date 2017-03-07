@@ -24,6 +24,28 @@ extern int G2_BACKWARD;
 extern int G2_LEFTTURN;
 extern int G2_RIGHTTURN;
 
+//command idx with forward (group3)
+extern int G3_1;
+extern int G3_2;
+extern int G3_3;
+extern int G3_4;
+extern int G3_5;
+extern int G3_6;
+extern int G3_7;
+extern int G3_8;
+extern int G3_9;
+extern int G3_10;
+extern int G3_11;
+extern int G3_12;
+extern int G3_13;
+extern int G3_14;
+extern int G3_15;
+extern int G3_16;
+extern int G3_17;
+extern int G3_18;
+extern int G3_19;
+extern int G3_20;
+
 extern int group = -1;
 
 void test_trigger() {
@@ -73,7 +95,9 @@ void test_numeric() {
 	assert(result == G2_RIGHTTURN);
 }
 void test_numeric_forward() {
-	foward_with_time();
+	for (int i = 0; i < 20; i++) {
+		assert(foward_with_time(i) == i);
+	}
 }
 
 int main() {

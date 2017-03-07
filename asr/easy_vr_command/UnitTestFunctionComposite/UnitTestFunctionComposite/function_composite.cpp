@@ -23,26 +23,26 @@ extern const int G2_LEFTTURN = 2;
 extern const int G2_RIGHTTURN = 3;
 
 //command idx with forward (group3)
-extern const int G3_1;
-extern const int G3_2;
-extern const int G3_3;
-extern const int G3_4;
-extern const int G3_5;
-extern const int G3_6;
-extern const int G3_7;
-extern const int G3_8;
-extern const int G3_9;
-extern const int G3_10;
-extern const int G3_11;
-extern const int G3_12;
-extern const int G3_13;
-extern const int G3_14;
-extern const int G3_15;
-extern const int G3_16;
-extern const int G3_17;
-extern const int G3_18;
-extern const int G3_19;
-extern const int G3_20;
+extern const int G3_1 = 0;
+extern const int G3_2 = 1;
+extern const int G3_3 = 2;
+extern const int G3_4 = 3;
+extern const int G3_5 = 4;
+extern const int G3_6 = 5;
+extern const int G3_7 = 6;
+extern const int G3_8 = 7;
+extern const int G3_9 = 8;
+extern const int G3_10 = 9;
+extern const int G3_11 = 10;
+extern const int G3_12 = 11;
+extern const int G3_13 = 12;
+extern const int G3_14 = 13;
+extern const int G3_15 = 14;
+extern const int G3_16 = 15;
+extern const int G3_17 = 16;
+extern const int G3_18 = 17;
+extern const int G3_19 = 18;
+extern const int G3_20 = 19;
 
 extern int group = -1;
 
