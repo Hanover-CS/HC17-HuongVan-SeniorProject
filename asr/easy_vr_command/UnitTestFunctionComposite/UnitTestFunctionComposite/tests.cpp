@@ -94,9 +94,9 @@ void test_numeric() {
 	result = direction(G2_RIGHTTURN);
 	assert(result == G2_RIGHTTURN);
 }
-void test_numeric_forward() {
+void test_numeric_foward() {
 	for (int i = 0; i < 20; i++) {
-		assert(foward_with_time(i) == i);
+		assert(foward_with_time(i) == 100 + i);
 	}
 }
 
@@ -104,5 +104,6 @@ int main() {
 	test_trigger();
 	test_basic();
 	test_numeric();
+	test_numeric_foward();
 	return 0;
 }
