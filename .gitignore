@@ -13,3 +13,6 @@ asr/easy_vr_command/UnitTestFunctionComposite/UnitTestFunctionComposite/UnitTest
 *.filters
 *.ilk
 asr/easy_vr_command/UnitTestFunctionComposite/Debug/UnitTestFunctionComposite.ilk
+*.pdb
+asr/easy_vr_command/UnitTestFunctionComposite/UnitTestFunctionComposite/Debug/tests.obj
+*.idb
