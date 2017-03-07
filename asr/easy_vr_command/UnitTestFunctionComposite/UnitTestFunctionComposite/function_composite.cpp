@@ -1,4 +1,5 @@
 #include "function_composite.h"
+#include "Obedient.h"
 
 //group
 extern const int GROUP_0 = 0;
@@ -100,4 +101,13 @@ int direction(int idx) {
 	}
 	
 	return -1;
+}
+
+/* This is the function that passed argument to forward function that will tell Obedient
+*  to move forward for that seconds of time
+*  This is only work if we passed the approriate idx's, which is 0-19, and not working
+*  at all for other cases
+*/
+int foward_with_time(int idx) {
+	return foward(idx);
 }
