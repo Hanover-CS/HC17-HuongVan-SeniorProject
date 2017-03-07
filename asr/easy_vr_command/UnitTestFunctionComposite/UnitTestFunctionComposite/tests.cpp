@@ -119,6 +119,12 @@ void test_numeric_turnLeft() {
 	}
 }
 
+void test_numeric_turnRight() {
+	for (int i = 0; i < 20; i++) {
+		assert(turnRight_with_degree(i) == 300 + i);
+	}
+}
+
 int main() {
 	test_trigger();
 	test_basic();
@@ -126,5 +132,6 @@ int main() {
 	test_numeric_foward();
 	test_numeric_backward();
 	test_numeric_turnLeft();
+	test_numeric_turnRight();
 	return 0;
 }
