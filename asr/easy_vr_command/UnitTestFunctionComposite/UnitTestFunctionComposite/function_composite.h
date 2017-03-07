@@ -1,0 +1,4 @@
+#ifndef _FUNCTION_COMPOSITE_H_
+#define _FUNCTIONC_COMPOSITE_H_
+
+#endif
