@@ -16,3 +16,4 @@ asr/easy_vr_command/UnitTestFunctionComposite/Debug/UnitTestFunctionComposite.il
 *.pdb
 asr/easy_vr_command/UnitTestFunctionComposite/UnitTestFunctionComposite/Debug/tests.obj
 *.idb
+*.ipch
