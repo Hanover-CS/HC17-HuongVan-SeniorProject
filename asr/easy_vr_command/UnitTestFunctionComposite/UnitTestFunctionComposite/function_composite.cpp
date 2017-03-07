@@ -4,8 +4,10 @@
 extern const int GROUP_0 = 0;
 extern const int GROUP_1 = 1;
 
-//command idx
+//command group0 idx
 extern const int G0_OBEDIENT = 0;
+
+//command group1 idx
 extern const int G1_FOWARD = 0;
 extern const int G1_BACKWARD = 1;
 extern const int G1_LEFTTURN = 2;
@@ -13,7 +15,16 @@ extern const int G1_RIGHTTURN = 3;
 extern const int G1_TURNBACKLEFT = 4;
 extern const int G1_TURNBACKRIGHT = 5;
 extern const int G1_STOP = 6;
+
+//command group2 idx
+extern const int G2_FOWARD = 0;
+extern const int G2_BACKWARD = 1;
+extern const int G2_LEFTTURN = 2;
+extern const int G2_RIGHTTURN = 3;
+
 extern int group = -1;
+
+
 
 /* This is the function that handle the trigger to start the Obedient
 * This is only work if we passed the right idx, which is 0, and not working
