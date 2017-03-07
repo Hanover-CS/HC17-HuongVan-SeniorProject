@@ -40,4 +40,11 @@ int backward_with_time(int idx);
 */
 int turnLeft_with_degree(int idx);
 
+/* This is the function that passed argument to turnRight function that will tell Obedient
+*  to move forward for that seconds of time
+*  This is only work if we passed the approriate idx's, which is 0-19, and not working
+*  at all for other cases
+*/
+int turnRight_with_degree(int idx);
+
 #endif
