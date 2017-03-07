@@ -31,7 +31,7 @@ extern int group = -1;
 * at all for other cases
 */
 int trigger(int idx) {
-	switch (idx) {
+	switch(idx) {
 	    case G0_OBEDIENT:
 		    group = GROUP_1;
 	}
@@ -44,7 +44,7 @@ int trigger(int idx) {
 *  at all for other cases
 */
 int basic(int idx) {
-	switch (idx) {
+	switch(idx) {
 	    case G1_FOWARD:
 			return G1_FOWARD;
 		case G1_BACKWARD:
@@ -58,5 +58,24 @@ int basic(int idx) {
 		case G1_TURNBACKRIGHT:
 			return G1_TURNBACKRIGHT;
 	}
+	return -1;
+}
+
+/* This is the function that direct to appropriate functions with numbers
+*  This is only work if we passed the approriate idx's, which is 0-3, and not working
+*  at all for other cases
+*/
+int direction(int idx) {
+	switch(idx) {
+	    case G2_FOWARD:
+			return G2_FOWARD;
+		case G2_BACKWARD:
+			return G2_BACKWARD;
+		case G2_RIGHTTURN:
+			return G2_RIGHTTURN;
+		case G2_LEFTTURN:
+			return G2_LEFTTURN;
+	}
+	
 	return -1;
 }

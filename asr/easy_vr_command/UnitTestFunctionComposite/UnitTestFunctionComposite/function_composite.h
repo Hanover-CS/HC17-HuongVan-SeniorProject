@@ -13,4 +13,10 @@ int trigger(int idx);
 */
 int basic(int idx);
 
+/* This is the function that direct to appropriate functions with numbers
+*  This is only work if we passed the approriate idx's, which is 0-3, and not working
+*  at all for other cases
+*/
+int direction(int idx);
+
 #endif
