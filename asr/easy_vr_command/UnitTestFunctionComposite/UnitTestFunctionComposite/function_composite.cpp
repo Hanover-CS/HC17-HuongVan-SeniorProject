@@ -48,6 +48,8 @@ extern const int G3_19 = 18;
 extern const int G3_20 = 19;
 
 extern int group = -1;
+extern int id = -1;
+extern int funID;
 //default value for movement with number that will ask Obedient to wait for the users' desired value
 extern const int default = -2;
 
@@ -116,10 +118,10 @@ int direction(int idx) {
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int foward_with_time(int idx) {
+int foward_with_time() {
 	int result;
 	
-	result = obedient.fowardSecond(idx);
+	result = obedient.fowardSecond(id);
 
 	return result;
 }
@@ -129,10 +131,10 @@ int foward_with_time(int idx) {
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int backward_with_time(int idx) {
+int backward_with_time() {
 	int result;
 
-	result = obedient.backwardSecond(idx);
+	result = obedient.backwardSecond(id);
 
 	return result;
 }
@@ -142,10 +144,10 @@ int backward_with_time(int idx) {
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int turnLeft_with_degree(int idx) {
+int turnLeft_with_degree() {
 	int result;
 
-	result = obedient.turnLeftDegree(idx * 10);
+	result = obedient.turnLeftDegree(id * 10);
 
 	return result;
 }
@@ -155,10 +157,45 @@ int turnLeft_with_degree(int idx) {
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int turnRight_with_degree(int idx) {
+int turnRight_with_degree() {
 	int result;
 
-	result = obedient.turnRightDegree(idx * 10);
+	result = obedient.turnRightDegree(id * 10);
 
 	return result;
+}
+
+/* This is the function that recognizes a number said to the Obedient
+*/
+int numberRecognized(int idx) {
+	return idx;
+}
+
+/* This is the function that passed argument to action that where the Obedient will take the input from users
+*  With the help of switch statement based on group, it will direct the flow to the right place
+*  at which, the appropriate function will get call and carry out the action.
+*  This is will take two arguments group, and idx. The group will direct the flow to where the function lies,
+*  then the function get call with the idx.
+*/
+int action(int group, int idx) {
+	switch(group) {
+	    case GROUP_0:
+			trigger(idx);
+			break;
+		case GROUP_1:
+			basic(idx);
+			break;
+		case GROUP_2:
+			if (id != -1) {
+				funID = direction(idx);
+			}
+			else {
+				group = GROUP_3;
+			}
+			break;
+		case GROUP_3:
+			id = numberRecognized(idx);
+			action (GROUP_2, funID);
+			break;
+	}
 }

@@ -50,6 +50,8 @@ extern int G3_20;
 
 extern int group;
 extern int default;
+extern int id;
+extern int funID;
 
 void test_trigger() {
 	int result;
@@ -114,25 +116,29 @@ void test_numeric() {
 */
 void test_numeric_foward() {
 	for (int i = 0; i < 20; i++) {
-		assert(foward_with_time(i) == i);
+		id = i;
+		assert(foward_with_time() == i);
 	}
 }
 
 void test_numeric_backward() {
 	for (int i = 0; i < 20; i++) {
-		assert(foward_with_time(i) == 100 + i);
+		id = i;
+		assert(foward_with_time() == 100 + i);
 	}
 }
 
 void test_numeric_turnLeft() {
 	for (int i = 0; i < 20; i++) {
-		assert(turnLeft_with_degree(i) == 200 + i);
+		id = i
+		assert(turnLeft_with_degree() == 200 + i);
 	}
 }
 
 void test_numeric_turnRight() {
 	for (int i = 0; i < 20; i++) {
-		assert(turnRight_with_degree(i) == 300 + i);
+		id = i;
+		assert(turnRight_with_degree() == 300 + i);
 	}
 }
 

@@ -24,28 +24,28 @@ int direction(int idx);
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int foward_with_time(int idx);
+int foward_with_time();
 
 /* This is the function that passed argument to backward function that will tell Obedient
 *  to move forward for that seconds of time
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int backward_with_time(int idx);
+int backward_with_time();
 
 /* This is the function that passed argument to turnLeft function that will tell Obedient
 *  to move forward for that seconds of time
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int turnLeft_with_degree(int idx);
+int turnLeft_with_degree();
 
 /* This is the function that passed argument to turnRight function that will tell Obedient
 *  to move forward for that seconds of time
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
 *  at all for other cases
 */
-int turnRight_with_degree(int idx);
+int turnRight_with_degree();
 
 /* This is the function that passed argument to action that where the Obedient will take the input from users
 *  With the help of switch statement based on group, it will direct the flow to the right place
