@@ -47,4 +47,12 @@ int turnLeft_with_degree(int idx);
 */
 int turnRight_with_degree(int idx);
 
+/* This is the function that passed argument to action that where the Obedient will take the input from users
+*  With the help of switch statement based on group, it will direct the flow to the right place
+*  at which, the appropriate function will get call and carry out the action.
+*  This is will take two arguments group, and idx. The group will direct the flow to where the function lies, 
+*  then the function get call with the idx. 
+*/
+int action(int group, int idx);
+
 #endif
