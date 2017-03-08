@@ -1,5 +1,6 @@
 #include <iostream>
 #include "function_composite.h"
+#include "obedient.h"
 using namespace std;
 
 //group

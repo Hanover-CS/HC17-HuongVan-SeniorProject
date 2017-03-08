@@ -1,5 +1,5 @@
 #include "function_composite.h"
-#include "Obedient.h"
+#include "obedient.h"
 
 //group
 extern const int GROUP_0 = 0;
