@@ -5,6 +5,8 @@ using namespace std;
 //group
 extern int GROUP_0;
 extern int GROUP_1;
+extern int GROUP_2;
+extern int GROUP_3;
 
 //command group0 idx;
 extern int G0_OBEDIENT;
@@ -46,7 +48,8 @@ extern int G3_18;
 extern int G3_19;
 extern int G3_20;
 
-extern int group = -1;
+extern int group;
+extern int default;
 
 void test_trigger() {
 	int result;
@@ -58,6 +61,14 @@ void test_trigger() {
 	group = -1;
 }
 
+/*foward will return 0
+* backward will return 100
+* turnLeft will return 200
+* turnRight will return 300
+* turnBackLeft will return 400
+* turnBackRight will return 500
+* stop will return 600
+*/
 void test_basic() {
 	int result;
 	
@@ -67,7 +78,7 @@ void test_basic() {
 	assert(result == -1);
 	for (int i = 0; i < 7; i++) {
 		result = basic(i);
-		assert(result == i);
+		assert(result == i*100);
 	}
 }
 
@@ -125,6 +136,78 @@ void test_numeric_turnRight() {
 	}
 }
 
+void test_action() {
+	int result, numeric;
+
+	//test action with group0
+	result = action(GROUP_0, 0);
+	assert(result == GROUP_0);
+
+	//test action with group1
+	result = action(GROUP_1, G1_FOWARD);
+	assert(result == 0);
+	result = action(GROUP_1, G1_BACKWARD);
+	assert(result == 100);
+	result = action(GROUP_1, G1_LEFTTURN);
+	assert(result == 200);
+	result = action(GROUP_1, G1_RIGHTTURN);
+	assert(result == 300);
+	result = action(GROUP_1, G1_TURNBACKLEFT);
+	assert(result == 400);
+	result = action(GROUP_1, G1_TURNBACKRIGHT);
+	assert(result == 500);
+
+	//test action with group2
+	result = action(GROUP_2, G2_FOWARD);
+	assert(result == G2_FOWARD);
+	result = action(GROUP_2, G2_BACKWARD);
+	assert(result == G2_BACKWARD);
+	result = action(GROUP_2, G2_LEFTTURN);
+	assert(result == G2_LEFTTURN);
+	result = action(GROUP_2, G2_RIGHTTURN);
+	assert(result == G2_RIGHTTURN);
+
+	/* test action with group3 with foward
+	 * In reality, the user will call the function, then it will trigger to the group3_group of numbers
+	 * then the action function will recoginize the number and set the number variable in each function_with_number
+	 * will set the number first then recall the function with foward_with_number
+	 * then with the set number the function will run instead of call the action again.
+	 */
+	action(GROUP_3, G3_10);
+	result = action(GROUP_2, G2_FOWARD);
+	assert(result == G3_10);
+
+	/* test action with group3 with backward
+	* In reality, the user will call the function, then it will trigger to the group3_group of numbers
+	* then the action function will recoginize the number and set the number variable in each function_with_number
+	* will set the number first then recall the function with foward_with_number
+	* then with the set number the function will run instead of call the action again.
+	*/
+	action(GROUP_3, G3_19);
+	result = action(GROUP_2, G2_BACKWARD);
+	assert(result == 100 + G3_19);
+
+	/* test action with group3 with turnLeft
+	* In reality, the user will call the function, then it will trigger to the group3_group of numbers
+	* then the action function will recoginize the number and set the number variable in each function_with_number
+	* will set the number first then recall the function with foward_with_number
+	* then with the set number the function will run instead of call the action again.
+	*/
+	action(GROUP_3, G3_5);
+	result = action(GROUP_2, G2_LEFTTURN);
+	assert(result == 200 + G3_5);
+
+	/* test action with group3 with turnRight
+	* In reality, the user will call the function, then it will trigger to the group3_group of numbers
+	* then the action function will recoginize the number and set the number variable in each function_with_number
+	* will set the number first then recall the function with foward_with_number
+	* then with the set number the function will run instead of call the action again.
+	*/
+	action(GROUP_3, G3_15);
+	result = action(GROUP_2, G2_RIGHTTURN);
+	assert(result == 300 + G3_15);
+}
+
 int main() {
 	test_trigger();
 	test_basic();
@@ -133,5 +216,6 @@ int main() {
 	test_numeric_backward();
 	test_numeric_turnLeft();
 	test_numeric_turnRight();
+	test_action();
 	return 0;
 }

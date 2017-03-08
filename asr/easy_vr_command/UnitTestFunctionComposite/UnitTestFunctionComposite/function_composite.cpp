@@ -4,6 +4,8 @@
 //group
 extern const int GROUP_0 = 0;
 extern const int GROUP_1 = 1;
+extern const int GROUP_2 = 2;
+extern const int GROUP_3 = 3;
 
 //command group0 idx
 extern const int G0_OBEDIENT = 0;
@@ -46,6 +48,11 @@ extern const int G3_19 = 18;
 extern const int G3_20 = 19;
 
 extern int group = -1;
+//default value for movement with number that will ask Obedient to wait for the users' desired value
+extern const int default = -2;
+
+//initialize the num variable that will test whether the user already passes the number or not
+int num = default;
 
 Obedient obedient(10, 11);
 obedient.attachServo();
