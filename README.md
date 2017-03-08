@@ -37,6 +37,7 @@ After placing Obedient library into your libraries repository, now you can inclu
 Check out the test file in robot/test for how to include "Obedient.h" in your sketch.
 
 These followings are the methods you can use when playing with Obedient:
+
 1. Methods with quantity
 	* fowardSecond(int second);
 	* backwardSecond(int second);
