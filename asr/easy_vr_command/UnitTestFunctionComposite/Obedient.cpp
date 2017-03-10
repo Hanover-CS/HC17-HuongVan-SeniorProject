@@ -53,20 +53,19 @@ void Obedient::stop()
 //Default Foward
 int Obedient::foward()
 {
-  return 0;
+    return 0;
 }
 
 //Default Backward
 int Obedient::backward()
 {
-  return 100;
+    return 100;
 }
 
 //Turn back left
-void Obedient::turnBackLeft()
+int Obedient::turnBackLeft()
 {
-	turnDegree(1, 180);
-	stopSecond(1);
+    return 400;
 }
 
 //Turn back right

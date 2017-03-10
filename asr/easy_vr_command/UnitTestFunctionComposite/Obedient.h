@@ -28,7 +28,7 @@ class Obedient
 		void stop();
 		int foward();
 		int backward();
-		void turnBackLeft();
+		int turnBackLeft();
 		void turnBackRight();
 		void turnLeft();
 		void turnRight();
