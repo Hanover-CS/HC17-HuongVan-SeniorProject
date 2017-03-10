@@ -31,7 +31,7 @@ class Obedient
 		int turnBackLeft();
 		int turnBackRight();
 		int turnLeft();
-		void turnRight();
+		int turnRight();
 		void circleLeft();
 		void circleRight();
 
