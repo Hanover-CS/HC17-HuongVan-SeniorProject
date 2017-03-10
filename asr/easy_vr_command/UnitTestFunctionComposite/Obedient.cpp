@@ -51,10 +51,9 @@ void Obedient::stop()
 }
 
 //Default Foward
-void Obedient::foward()
+int Obedient::foward()
 {
-  fowardSecond(5);
-  stopSecond(1);
+  return 0;
 }
 
 //Default Backward
