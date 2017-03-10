@@ -27,7 +27,7 @@ class Obedient
 		//Methods without quantity
 		void stop();
 		int foward();
-		void backward();
+		int backward();
 		void turnBackLeft();
 		void turnBackRight();
 		void turnLeft();

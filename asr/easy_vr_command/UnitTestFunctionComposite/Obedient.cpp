@@ -57,10 +57,9 @@ int Obedient::foward()
 }
 
 //Default Backward
-void Obedient::backward()
+int Obedient::backward()
 {
-  backwardSecond(5);
-  stopSecond(1);
+  return 100;
 }
 
 //Turn back left
