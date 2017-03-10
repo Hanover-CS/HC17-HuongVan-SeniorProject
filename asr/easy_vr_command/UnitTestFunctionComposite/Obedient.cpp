@@ -122,17 +122,9 @@ void Obedient::turnDegree(int dir, int degree)
 	}
 }
 
-void Obedient::move(int dir, int s)
+int Obedient::move(int dir, int s)
 {
-	if (dir == 1) {
-		left.writeMicroseconds(1600);
-  		right.writeMicroseconds(1400);
-  		delay(s * 1000);
-	} else {
-		left.writeMicroseconds(1400);
-  		right.writeMicroseconds(1600);
-  		delay(s * 1000);
-	}
+	return dir * 100 + s;
 }
 
 /**************************END***********************************************/

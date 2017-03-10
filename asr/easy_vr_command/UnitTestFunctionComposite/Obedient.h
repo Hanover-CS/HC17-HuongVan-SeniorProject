@@ -39,6 +39,6 @@ class Obedient
 		int _servoLeft, _servoRight;
 		Servo left, right;
 		void turnDegree(int dir, int degree);
-		void move(int dir, int s);
+		int move(int dir, int s);
 };
 #endif
