@@ -75,10 +75,9 @@ int Obedient::turnBackRight()
 }
 
 //Turn Left
-void Obedient::turnLeft()
+int Obedient::turnLeft()
 {
-	turnDegree(1, 90);
-	stopSecond(1);
+	return 200;
 }
 
 //Turn right
