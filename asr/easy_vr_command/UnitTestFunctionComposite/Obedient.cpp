@@ -23,17 +23,15 @@ void Obedient::attachServo() {
 }
 
 //Foward with Second
-void Obedient::fowardSecond(int second)
+int Obedient::fowardSecond(int second)
 {
- 	move(1, second);
- 	stopSecond(1);
+ 	return move(1, second);
 }
 
 //Move backward with Second
-void Obedient::backwardSecond(int second)
+int Obedient::backwardSecond(int second)
 {
-  	move(0, second);
-  	stopSecond(1);	
+  	return move(0, second);	
 }
 
 //Stop with Second
@@ -45,9 +43,9 @@ void Obedient::stopSecond(int second)
 }
 
 //Default stop
-void Obedient::stop()
+int Obedient::stop()
 {
-	stopSecond(10);
+	return 600;
 }
 
 //Default Foward
@@ -87,17 +85,15 @@ int Obedient::turnRight()
 }
 
 //TUrn 1 left circle around 
-void Obedient::circleLeft()
+int Obedient::circleLeft()
 {
-	turnDegree(1, 360);
-	stopSecond(1);
+	return turnDegree(1, 360);
 }
 
 //TUrn 1 right circle around 
-void Obedient::circleRight()
+int Obedient::circleRight()
 {
-	turnDegree(0, 360);
-	stopSecond(1);
+	return turnDegree(0, 360);
 }
 /**************************END*******************************************/
 

@@ -20,20 +20,20 @@ class Obedient
 		void attachServo();
 
 		//Methods with quantity
-		void fowardSecond(int second);
-		void backwardSecond(int second);
+		int fowardSecond(int second);
+		int backwardSecond(int second);
 		void stopSecond(int second);
 
 		//Methods without quantity
-		void stop();
+		int stop();
 		int foward();
 		int backward();
 		int turnBackLeft();
 		int turnBackRight();
 		int turnLeft();
 		int turnRight();
-		void circleLeft();
-		void circleRight();
+		int circleLeft();
+		int circleRight();
 
 	private:
 		int _servoLeft, _servoRight;
