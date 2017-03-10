@@ -108,18 +108,13 @@ void Obedient::circleRight()
 /**************************END*******************************************/
 
 /**************************Private Method************************************/
-void Obedient::turnDegree(int dir, int degree)
+int Obedient::turnDegree(int dir, int degree)
 {
-	degree = (int)(degree / 0.95) * 8;
 	if (dir == 1) {
-		left.writeMicroseconds(1300);
- 		right.writeMicroseconds(1300);
- 		delay(degree);
-	} else {
-		left.writeMicroseconds(1700);
- 		right.writeMicroseconds(1700);
- 		delay(degree);
-	}
+		return 2*100+degree;
+	} 
+
+	return 100+degree;
 }
 
 int Obedient::move(int dir, int s)
