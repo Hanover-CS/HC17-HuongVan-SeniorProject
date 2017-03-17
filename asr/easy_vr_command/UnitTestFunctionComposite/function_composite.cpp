@@ -81,9 +81,9 @@ int basic(int idx) {
 	    case G1_FOWARD:
 			return obedient.foward();
 		case G1_BACKWARD:
-			return obedient.backward();;
+			return obedient.backward();
 		case G1_LEFTTURN:
-			return obedient.turnLeft();;
+			return obedient.turnLeft();
 		case G1_RIGHTTURN:
 			return obedient.turnRight();
 		case G1_TURNBACKLEFT:
