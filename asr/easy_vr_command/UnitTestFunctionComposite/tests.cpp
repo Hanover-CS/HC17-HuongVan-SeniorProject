@@ -8,6 +8,7 @@ extern int GROUP_0;
 extern int GROUP_1;
 extern int GROUP_2;
 extern int GROUP_3;
+extern int GROUP_4;
 
 //command group0 idx;
 extern int G0_OBEDIENT;
@@ -49,10 +50,9 @@ extern int G3_18;
 extern int G3_19;
 extern int G3_20;
 
-extern int group;
-extern int default;
-extern int id;
-extern int funID;
+//command group4 idx
+extern int G4_BASIC;
+extern int G4_ADVANCED;
 
 void test_trigger() {
 	int result;
@@ -60,8 +60,16 @@ void test_trigger() {
 	result = trigger(1);
 	assert(result == -1);
 	result = trigger(0);
-	assert(result == 0);
-	group = -1;
+	assert(result == 4);
+	group = -1; //set back to the default group when no group is assigned yet.
+}
+
+void test_basicOrAdvanced() {
+	result = basicOrAdvanced(0);
+	assert(result == 1);
+	result = basicOrAdvanced(1);
+	assert(result == 2);
+	group = -1; //set back to the default group when no group is assigned yet.
 }
 
 /*foward will return 0
