@@ -252,9 +252,11 @@ void trigger(int idx) {
 void basicOrAdvanced(int idx) {
    switch(idx) {
      case G4_BASIC:
+         tonePlay(1500, 1000);
          group = GROUP_1;
          break;
      case G4_ADVANCED:
+         tonePlay(1000, 1000);
          group = GROUP_2;
          break;
    }
@@ -316,15 +318,25 @@ void pickMovement(int idx) {
    group = GROUP_3;
    switch(idx) {
        case G2_FOWARD:
+           tonePlay(1000, 1000);
            id = G2_FOWARD;
+           break;
        case G2_BACKWARD:
+           tonePlay(1200, 1000);
            id = G2_BACKWARD;
+           break;
        case G2_RIGHTTURN:
+           tonePlay(1400, 1000);
            id = G2_RIGHTTURN;
+           break;
        case G2_LEFTTURN:
+           tonePlay(1600, 1000);
            id = G2_LEFTTURN;
+           break;
        case G2_STOP:
+           tonePlay(1800, 1000);
            group = GROUP_4;
+           break;
    }
 }
 
