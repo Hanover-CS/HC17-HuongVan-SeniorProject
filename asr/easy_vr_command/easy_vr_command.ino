@@ -208,9 +208,9 @@ void tonePlay(int sound1, int frequency) {
  */
 void action()
 {
-    switch (group)
-    {
-    case GROUP_0:
+   switch (group)
+   {
+      case GROUP_0:
 //      switch (idx)
 //      {
 //      case G0_OBEDIENT:
@@ -220,14 +220,14 @@ void action()
 //        group = GROUP_1;
 //        break;
 //      }
-      trigger(idx);
-      break;
-    case GROUP_1:
-      basic(idx);
-      break;
-    case GROUP_4:
-      basicOrAdvanced(idx);
-      break;
+          trigger(idx);
+          break;
+      case GROUP_1:
+          basic(idx);
+          break;
+      case GROUP_4:
+          basicOrAdvanced(idx);
+          break;
   }
 }
 
@@ -236,10 +236,10 @@ void action()
  * to announce that it gets the word from user. It only work if idx = G0_OBEDIENT
  */
 void trigger(int idx) {
-  if (idx == G0_OBEDIENT) {
-       tonePlay(1500, 1000);
-       group = GROUP_4;
-  }
+   if (idx == G0_OBEDIENT) {
+        tonePlay(1500, 1000);
+        group = GROUP_4;
+   }
 }
 
 /* This is the function that handle the user's choices between basic or advanced commands
@@ -248,14 +248,14 @@ void trigger(int idx) {
  * it will set the group to the value corresponding to basic and advanced group of commands.
  */
 void basicOrAdvanced(int idx) {
-  switch(idx) {
-    case G4_BASIC:
-        group = GROUP_1;
-        break;
-    case G4_ADVANCED:
-        group = GROUP_2;
-        break;
-  }
+   switch(idx) {
+     case G4_BASIC:
+         group = GROUP_1;
+         break;
+     case G4_ADVANCED:
+         group = GROUP_2;
+         break;
+   }
 }
 
 /* The basic function that will take one parameter of idx indicator and based on the value of idx to determine which function will be called inside itself.
@@ -272,30 +272,30 @@ void basicOrAdvanced(int idx) {
  * The function will return nothing.     
  */
 void basic(int idx) {
-  tonePlay(1000, 1000);
-  switch(idx) {
-    case G1_FOWARD:
-        obedient.foward();
-        break;
-    case G1_BACKWARD:
-        obedient.backward();
-        break;
-    case G1_LEFTTURN:
-        obedient.turnLeft();
-        break;
-    case G1_RIGHTTURN:
-        obedient.turnRight();
-        break;
-    case G1_TURNBACKLEFT:
-        obedient.turnBackLeft();
-        break;
-    case G1_TURNBACKRIGHT:
-        obedient.turnBackRight();
-        break;
-    case G1_STOP:
-        group = GROUP_4;
-        break;
-  }
+   tonePlay(1000, 1000);
+   switch(idx) {
+     case G1_FOWARD:
+         obedient.foward();
+         break;
+     case G1_BACKWARD:
+         obedient.backward();
+         break;
+     case G1_LEFTTURN:
+         obedient.turnLeft();
+         break;
+     case G1_RIGHTTURN:
+         obedient.turnRight();
+         break;
+     case G1_TURNBACKLEFT:
+         obedient.turnBackLeft();
+         break;
+     case G1_TURNBACKRIGHT:
+         obedient.turnBackRight();
+         break;
+     case G1_STOP:
+         group = GROUP_4;
+         break;
+   }
 }
 
 /* This is the function that direct to appropriate functions with numbers
@@ -311,18 +311,18 @@ void basic(int idx) {
 *  the Obedient).
 */
 void direction(int idx) {
-  group = GROUP_3;
-  switch(idx) {
-      case G2_FOWARD:
-          id = G2_FOWARD;
-      case G2_BACKWARD:
-          id = G2_BACKWARD;
-      case G2_RIGHTTURN:
-          id = G2_RIGHTTURN;
-      case G2_LEFTTURN:
-          id = G2_LEFTTURN;
-      case G2_STOP:
-          group = GROUP_4;
-  }
+   group = GROUP_3;
+   switch(idx) {
+       case G2_FOWARD:
+           id = G2_FOWARD;
+       case G2_BACKWARD:
+           id = G2_BACKWARD;
+       case G2_RIGHTTURN:
+           id = G2_RIGHTTURN;
+       case G2_LEFTTURN:
+           id = G2_LEFTTURN;
+       case G2_STOP:
+           group = GROUP_4;
+   }
 }
 
