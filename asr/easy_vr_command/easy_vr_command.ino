@@ -25,6 +25,7 @@ enum Groups
 {
   GROUP_0  = 0,
   GROUP_1  = 1,
+  GROUP_4  = 3,
 };
 
 enum Group0 
@@ -42,6 +43,12 @@ enum Group1
   G1_TURNBACKRIGHT = 5,
   G1_STOP = 6,
 };
+
+enum Group4
+{
+  G4_BASIC = 0,
+  G4_ADVANCED = 1,
+}
 
 // Declares variable id for the direction function here
 // variable group to keep track of the current group within action function
