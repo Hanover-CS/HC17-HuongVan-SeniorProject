@@ -23,17 +23,19 @@ EasyVR easyvr(port);
 //Groups and Commands
 enum Groups
 {
-  GROUP_0 = 0,
-  GROUP_1 = 1,
-  GROUP_2 = 2,
-  GROUP_4 = 4,
+  GROUP_0 = 0, //trigger
+  GROUP_1 = 1, //basic
+  GROUP_2 = 2, //direction
+  GROUP_4 = 4, //basicOrAdvanced
 };
 
+//Trigger command idx's
 enum Group0 
 {
   G0_OBEDIENT = 0,
 };
 
+//Basic command idx's
 enum Group1 
 {
   G1_FOWARD = 0,
@@ -45,6 +47,15 @@ enum Group1
   G1_STOP = 6,
 };
 
+enum Group2
+{
+  G2_FOWARD = 0,
+  G2_BACKWARD = 1,
+  G2_LEFTTURN = 2,
+  G2_RIGHTTURN = 3,
+}
+
+//Basic or Advanced?
 enum Group4
 {
   G4_BASIC = 0,
