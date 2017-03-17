@@ -97,23 +97,23 @@ void test_numeric() {
 	int result;
 
 	//Test with outside legal choice
-	result = direction(-2);
+	result = pickMovement(-2);
 	assert(result == -2);
 
 	//Test with forward function
-	result = direction(G2_FOWARD);
+	result = pickMovement(G2_FOWARD);
 	assert(result == G2_FOWARD);
 
 	//Test with backward function
-	result = direction(G2_BACKWARD);
+	result = pickMovement(G2_BACKWARD);
 	assert(result == G2_BACKWARD);
 
 	//Test with turnleft function
-	result = direction(G2_LEFTTURN);
+	result = pickMovement(G2_LEFTTURN);
 	assert(result == G2_LEFTTURN);
 
 	//Test with turnright function
-	result = direction(G2_RIGHTTURN);
+	result = pickMovement(G2_RIGHTTURN);
 	assert(result == G2_RIGHTTURN);
 }
 

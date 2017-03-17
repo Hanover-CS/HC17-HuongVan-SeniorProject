@@ -26,7 +26,7 @@ int basic(int idx);
 *  This is only work if we passed the approriate idx's, which is 0-3, and not working
 *  at all for other cases
 */
-int direction(int idx);
+int pickMovement(int idx);
 
 /* This is the function that passed argument to forward function that will tell Obedient 
 *  to move forward for that seconds of time

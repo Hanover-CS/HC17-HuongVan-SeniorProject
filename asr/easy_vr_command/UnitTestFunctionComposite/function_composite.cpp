@@ -113,7 +113,7 @@ int basic(int idx) {
 *  This is only work if we passed the approriate idx's, which is 0-3, and not working
 *  at all for other cases
 */
-int direction(int idx) {
+int pickMovement(int idx) {
 	switch(idx) {
 	    case G2_FOWARD:
 			return G2_FOWARD;
@@ -202,7 +202,7 @@ int action(int group, int idx) {
 			break;
 		case GROUP_2:
 			if (id != -1) {
-				funID = direction(idx);
+				funID = pickMovement(idx);
 			}
 			else {
 				group = GROUP_3;

@@ -225,6 +225,8 @@ void action()
       case GROUP_1:
           basic(idx);
           break;
+      case GROUP_2:
+          pickMovement(idx);
       case GROUP_4:
           basicOrAdvanced(idx);
           break;
@@ -307,10 +309,10 @@ void basic(int idx) {
 *     2 - set id indicator to G2_LEFTTURN
 *     3 - set id indicator to G2_RIGHTTURN
 *     4 - set group indicator to GROUP_4 to exit the advanced commands and enter list of options.
-*  direction function return nothing, except set id indicator (id that will later on use in GROUP_3 as one of its functions' parameter to direct 
+*  pickMovement function return nothing, except set id indicator (id that will later on use in GROUP_3 as one of its functions' parameter to direct 
 *  the Obedient).
 */
-void direction(int idx) {
+void pickMovement(int idx) {
    group = GROUP_3;
    switch(idx) {
        case G2_FOWARD:
