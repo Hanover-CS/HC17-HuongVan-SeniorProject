@@ -23,9 +23,10 @@ EasyVR easyvr(port);
 //Groups and Commands
 enum Groups
 {
-  GROUP_0  = 0,
-  GROUP_1  = 1,
-  GROUP_4  = 3,
+  GROUP_0 = 0,
+  GROUP_1 = 1,
+  GROUP_2 = 2,
+  GROUP_4 = 4,
 };
 
 enum Group0 
@@ -227,6 +228,20 @@ void trigger(int idx) {
        tonePlay(1500, 1000);
        group = GROUP_4;
        break;
+  }
+}
+
+/* This is the function that handle the user's choices between basic or advanced commands
+ * then it will direct the flow to the corresponding place to tell what Obedient should obey
+ * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
+ * it will set the group to the value corresponding to basic and advanced group of commands.
+ */
+void basicOrAdvanced(int idx) {
+  switch(idx) {
+    case G4_BASIC:
+        group = GROUP_1;
+    case G4_ADVANCE:
+        group = GROUP_2;
   }
 }
 
