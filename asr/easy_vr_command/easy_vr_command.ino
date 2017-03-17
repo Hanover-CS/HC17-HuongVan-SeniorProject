@@ -21,23 +21,21 @@
 EasyVR easyvr(port);
 
 //Groups and Commands
-enum Groups
-{
+enum Groups {
   GROUP_0 = 0, //trigger
   GROUP_1 = 1, //basic
   GROUP_2 = 2, //direction
+  GROUP_3 = 3, //group of numbers
   GROUP_4 = 4, //basicOrAdvanced
 };
 
 //Trigger command idx's
-enum Group0 
-{
+enum Group0 {
   G0_OBEDIENT = 0,
 };
 
 //Basic command idx's
-enum Group1 
-{
+enum Group1 {
   G1_FOWARD = 0,
   G1_BACKWARD = 1,
   G1_LEFTTURN = 2,
@@ -47,30 +45,37 @@ enum Group1
   G1_STOP = 6,
 };
 
-enum Group2
-{
+// pick a movement
+enum Group2 {
   G2_FOWARD = 0,
   G2_BACKWARD = 1,
   G2_LEFTTURN = 2,
   G2_RIGHTTURN = 3,
   G2_STOP = 4,
-}
+};
+
+// pick a number as a parameter
+enum Group3 {
+ 
+};
 
 //Basic or Advanced?
-enum Group4
-{
+enum Group4 {
   G4_BASIC = 0,
   G4_ADVANCED = 1,
 };
 
-// Declares variable id for the direction function here
 // variable group to keep track of the current group within action function
 // variable idx to keep track of the commands in each group within subfunctions of action function
-int8_t group, idx, id;
+int8_t group, idx;
+
+// Declares variable id for the direction function here
+int id;
+
+// Declares obedient
 Obedient obedient(10, 11);
 
-void setup()
-{
+void setup() {
   obedient.attachServo();
   // setup PC serial port
   pcSerial.begin(9600);
@@ -124,8 +129,7 @@ void setup()
 
 void action();
 
-void loop()
-{
+void loop() {
   if (easyvr.getID() < EasyVR::EASYVR3)
     easyvr.setPinOutput(EasyVR::IO1, HIGH); // LED on (listening)
 
@@ -133,8 +137,7 @@ void loop()
   Serial.println(group);
   easyvr.recognizeCommand(group);
 
-  do
-  {
+  do {
     // can do some processing while waiting for a spoken command
   }
   while (!easyvr.hasFinished());
@@ -143,15 +146,13 @@ void loop()
     easyvr.setPinOutput(EasyVR::IO1, LOW); // LED off
 
   idx = easyvr.getWord();
-  if (idx >= 0)
-  {
+  if (idx >= 0) {
     // built-in trigger (ROBOT)
     // group = GROUP_X; <-- jump to another group X
     return;
   }
   idx = easyvr.getCommand();
-  if (idx >= 0)
-  {
+  if (idx >= 0) {
     // print debug message
     uint8_t train = 0;
     char name[32];
@@ -169,13 +170,12 @@ void loop()
     // perform some action
     action();
   }
-  else // errors or timeout or not recognized words
-  {
+  // errors or timeout or not recognized words
+  else {
     if (easyvr.isTimeout())
       Serial.println("Timed out, try again...");
     int16_t err = easyvr.getError();
-    if (err >= 0)
-    {
+    if (err >= 0) {
       Serial.print("Error ");
       Serial.println(err, HEX);
     }
