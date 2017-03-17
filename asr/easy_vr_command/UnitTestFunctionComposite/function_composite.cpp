@@ -6,6 +6,7 @@ extern const int GROUP_0 = 0;
 extern const int GROUP_1 = 1;
 extern const int GROUP_2 = 2;
 extern const int GROUP_3 = 3;
+extern const int GROUP_4 = 4;
 
 //command group0 idx
 extern const int G0_OBEDIENT = 0;
@@ -70,6 +71,20 @@ int trigger(int idx) {
 	}
 
 	return group;
+}
+
+/* This is the function that handle the user's choices between basic or advanced commands
+ * then it will direct the flow to the corresponding place to tell what Obedient should obey
+ * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
+ * it will set the group to the value corresponding to basic and advanced group of commands.
+ */
+int basicOrAdvanced(int idx) {
+	switch(idx) {
+		case G4_BASIC:
+		    group = GROUP_1;
+		case G4_ADVANCE:
+		    group = GROUP_2;
+	}
 }
 
 /* This is the function that handle the basic movements of the Obedient
