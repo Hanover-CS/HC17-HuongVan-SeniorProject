@@ -161,10 +161,17 @@ void loop()
     }
   }
 }
+
+/*
+ * tonePlay function that takes two arguments of int. First one determines the sound, and the second parameter determines frequency of chosen sound.
+ * then it will call the bult-in tone with the arguments passed.
+ * the sound will last for 1s by calling buil-int delay with approriate value.
+ */
 void tonePlay(int sound1, int frequency) {
   tone(5, sound1, frequency);
   delay(1000);
 }
+
 /*
  * Function action that will determine which group we are at and what commands are spoken. It takes no arguments and will direct through what values group/idx/id (state indicators)
  * are recognized by the speech recognition shield. The action will use switch with group indicator to put the flow in right group. 
