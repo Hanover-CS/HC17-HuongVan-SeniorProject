@@ -9,6 +9,13 @@
  */
 int trigger(int idx);
 
+/* This is the function that handle the user's choices between basic or advanced commands
+ * then it will direct the flow to the corresponding place to tell what Obedient should obey
+ * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
+ * it will set the group to the value corresponding to basic and advanced group of commands.
+ */
+int basicOrAdvanced(int idx);
+
 /* This is the function that handle the basic movements of the Obedient
 *  This is only work if we passed the approriate idx's, which is 0-6, and not working
 *  at all for other cases
