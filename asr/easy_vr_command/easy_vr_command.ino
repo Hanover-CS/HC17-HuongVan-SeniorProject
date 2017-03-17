@@ -49,7 +49,7 @@ enum Group4
 {
   G4_BASIC = 0,
   G4_ADVANCED = 1,
-}
+};
 
 // Declares variable id for the direction function here
 // variable group to keep track of the current group within action function
@@ -227,7 +227,6 @@ void trigger(int idx) {
   if (idx == G0_OBEDIENT) {
        tonePlay(1500, 1000);
        group = GROUP_4;
-       break;
   }
 }
 
@@ -240,8 +239,10 @@ void basicOrAdvanced(int idx) {
   switch(idx) {
     case G4_BASIC:
         group = GROUP_1;
-    case G4_ADVANCE:
+        break;
+    case G4_ADVANCED:
         group = GROUP_2;
+        break;
   }
 }
 
@@ -280,7 +281,7 @@ void basic(int idx) {
         obedient.turnBackRight();
         break;
     case G1_STOP:
-        group = GROUP_0;
+        group = GROUP_4;
         break;
   }
 }
