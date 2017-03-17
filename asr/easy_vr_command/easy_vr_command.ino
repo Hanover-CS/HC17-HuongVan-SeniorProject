@@ -53,6 +53,7 @@ enum Group2
   G2_BACKWARD = 1,
   G2_LEFTTURN = 2,
   G2_RIGHTTURN = 3,
+  G2_STOP = 4,
 }
 
 //Basic or Advanced?
@@ -294,6 +295,34 @@ void basic(int idx) {
     case G1_STOP:
         group = GROUP_4;
         break;
+  }
+}
+
+/* This is the function that direct to appropriate functions with numbers
+*  This is only work if we passed the approriate idx's, which is 0-4, and not working
+*  at all for other cases
+*  The idx is ranging from 0-4 and each idx takes one responsibility as following:
+*     0 - set id indicator to G2_FOWARD
+*     1 - set id indicator to G2_BACKWARD
+*     2 - set id indicator to G2_LEFTTURN
+*     3 - set id indicator to G2_RIGHTTURN
+*     4 - set group indicator to GROUP_4 to exit the advanced commands and enter list of options.
+*  direction function return nothing, except set id indicator (id that will later on use in GROUP_3 as one of its functions' parameter to direct 
+*  the Obedient).
+*/
+void direction(int idx) {
+  group = GROUP_3;
+  switch(idx) {
+      case G2_FOWARD:
+          id = G2_FOWARD;
+      case G2_BACKWARD:
+          id = G2_BACKWARD;
+      case G2_RIGHTTURN:
+          id = G2_RIGHTTURN;
+      case G2_LEFTTURN:
+          id = G2_LEFTTURN;
+      case G2_STOP:
+          group = GROUP_4;
   }
 }
 
