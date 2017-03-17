@@ -181,37 +181,7 @@ void action()
       trigger(idx);
       break;
     case GROUP_1:
-      switch (idx)
-      {
-      case G1_FOWARD:
-        tonePlay(1000, 1000);
-        obedient.foward();
-        break;
-      case G1_BACKWARD:
-        tonePlay(1000, 1000);
-        obedient.backward();
-        break;
-      case G1_LEFTTURN:
-        tonePlay(1000, 1000);
-        obedient.turnLeft();
-        break;
-      case G1_RIGHTTURN:
-        tonePlay(1000, 1000);
-        obedient.turnRight();
-        break;
-      case G1_TURNBACKLEFT:
-        tonePlay(1000, 1000);
-        obedient.turnBackLeft();
-        break;
-      case G1_TURNBACKRIGHT:
-        tonePlay(1000, 1000);
-        obedient.turnBackRight();
-        break;
-      case G1_STOP:
-        // write your action code here
-        // group = GROUP_X; <-- or jump to another group X for composite commands
-        break;
-      }
+      basic(idx);
       break;
     }
 }
@@ -222,6 +192,33 @@ void trigger(int idx) {
        tonePlay(1500, 1000);
        group = GROUP_1;
        break;
+  }
+}
+
+void basic(int idx) {
+  tonePlay(1000, 1000);
+  switch(idx) {
+    case G1_FOWARD:
+        obedient.foward();
+        break;
+    case G1_BACKWARD:
+        obedient.backward();
+        break;
+    case G1_LEFTTURN:
+        obedient.turnLeft();
+        break;
+    case G1_RIGHTTURN:
+        obedient.turnRight();
+        break;
+    case G1_TURNBACKLEFT:
+        obedient.turnBackLeft();
+        break;
+    case G1_TURNBACKRIGHT:
+        obedient.turnBackRight();
+        break;
+    case G1_STOP:
+        group = GROUP_0;
+        break;
   }
 }
 
