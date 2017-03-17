@@ -156,7 +156,7 @@ void loop()
     // perform some action
     action();
   }
-  else // errors or timeout
+  else // errors or timeout or not recognized words
   {
     if (easyvr.isTimeout())
       Serial.println("Timed out, try again...");
@@ -212,18 +212,20 @@ void action()
     case GROUP_1:
       basic(idx);
       break;
-    }
+    case GROUP_4:
+      basicOrAdvanced(idx);
+      break;
+  }
 }
 
 /*
  * trigger function take no argument and will set the group indicator to GROUP_4, list of option. Also it will call tonePlay(1500, 1000)
- * to announce that it gets the word from user.
+ * to announce that it gets the word from user. It only work if idx = G0_OBEDIENT
  */
 void trigger(int idx) {
-  switch(idx) {
-    case G0_OBEDIENT:
+  if (idx == G0_OBEDIENT) {
        tonePlay(1500, 1000);
-       group = GROUP_1;
+       group = GROUP_4;
        break;
   }
 }
