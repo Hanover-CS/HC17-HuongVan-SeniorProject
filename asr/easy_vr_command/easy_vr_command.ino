@@ -201,6 +201,10 @@ void action()
     }
 }
 
+/*
+ * trigger function take no argument and will set the group indicator to GROUP_4, list of option. Also it will call tonePlay(1500, 1000)
+ * to announce that it gets the word from user.
+ */
 void trigger(int idx) {
   switch(idx) {
     case G0_OBEDIENT:
