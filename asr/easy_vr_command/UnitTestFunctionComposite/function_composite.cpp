@@ -78,7 +78,7 @@ int trigger(int idx) {
  * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
  * it will set the group to the value corresponding to basic and advanced group of commands.
  */
-int basicOrAdvanced(int idx) {
+void basicOrAdvanced(int idx) {
 	switch(idx) {
 		case G4_BASIC:
 		    group = GROUP_1;
