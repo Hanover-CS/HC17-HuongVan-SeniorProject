@@ -43,8 +43,10 @@ enum Group1
   G1_STOP = 6,
 };
 
-
-int8_t group, idx;
+// Declares variable id for the direction function here
+// variable group to keep track of the current group within action function
+// variable idx to keep track of the commands in each group within subfunctions of action function
+int8_t group, idx, id;
 Obedient obedient(10, 11);
 
 void setup()
