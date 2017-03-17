@@ -165,7 +165,26 @@ void tonePlay(int sound1, int frequency) {
   tone(5, sound1, frequency);
   delay(1000);
 }
-
+/*
+ * Function action that will determine which group we are at and what commands are spoken. It takes no arguments and will direct through what values group/idx/id (state indicators)
+ * are recognized by the speech recognition shield. The action will use switch with group indicator to put the flow in right group. 
+ * When the flow are in the approriate group, the action function will call the function inside that group with the idx indicator. 'idx indicator' takes responsible to seperate commands
+ * by its corresponding idx's. This will help the function inside each group to know what action to direct Obedient Robot to move. The flows will be demonstrated as following rules:
+ * 1. GROUP_0: will call the trigger function with idx
+ * 2. GROUP_1: will call the basic function with idx. The idx will then determine which movement the Obedient will carry out
+ *     if idx = G1_FOWARD, then call foward function
+ *     if idx = G1_BACKWARD, then call backward function
+ *     if idx = G1_LEFTTURN, then call turnLeft function
+ *     if idx = G1_RIGHTTURN, then call turnRight function
+ *     if idx = G1_TURNBACKLEFT, then call turnBackLeft function
+ *     if idx = G1_TURNBACKRIGHT, then call turnBackRight function
+ *     if idx = G1_STOP, then call stop function to move back to list of option (GROUP_4)
+ * 3. GROUP_2: will call the direction function with idx to set the id indicator which will later on will use to determine what function will then be used to direct Obedient. The last 
+ *    id will be the stop that will direct the flow back to the list of option (GROUP_4)
+ * 4. GROUP_3: will call the numberRecognized function with id set in GROUP_2 and value of idx indicator of the numbers recognized by speech recognition shield. For each case 
+ *    of this function, there will be a break that would allow the user to change numeric parameters with the same function. The last case will be the stop which set the group back
+ *    to GROUP_2 in order to pick different functions.
+ */
 void action()
 {
     switch (group)
