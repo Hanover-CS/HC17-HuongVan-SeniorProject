@@ -86,10 +86,8 @@ enum Group4 {
 
 // variable group to keep track of the current group within action function
 // variable idx to keep track of the commands in each group within subfunctions of action function
-int8_t group, idx;
-
 // Declares variable id for the direction function here
-int id;
+int8_t group, idx, id;
 
 // Declares obedient
 Obedient obedient(10, 11);
@@ -357,3 +355,19 @@ void pickMovement(int idx) {
    }
 }
 
+/* This is the function that recognizes a number said to the Obedient. This recognized numbers will be used as a parameter in numberRecognized along
+ * with the id indicator that we already set up in group 2 and will call the approriate function that determine the movement of Obedient.
+*/
+void numberRecognized(int idx) {
+   switch(id) {
+      case G2_FOWARD:
+         obedient.fowardSecond(idx);
+         break;
+      case G2_BACKWARD:
+         obedient.backwardSecond(idx);
+      case G2_LEFTTURN:
+         obedient.turnDegree(1, idx * 10);
+      case G2_RIGHTTURN:
+         obedient.turnDegree(0, idx * 10);
+   }
+}
