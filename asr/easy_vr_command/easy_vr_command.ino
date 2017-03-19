@@ -358,20 +358,24 @@ void pickMovement(int idx) {
 
 /* This is the function that recognizes a number said to the Obedient. This recognized numbers will be used as a parameter in numberRecognized along
  * with the id indicator that we already set up in group 2 and will call the approriate function that determine the movement of Obedient.
+ * after it perform the function, it will then set the group indicator back to group2 for the next performing function.
 */
 void numberRecognized(int idx) {
+    int val = idx + 1;    
+    
     switch(id) {
         case G2_FOWARD:
-            obedient.fowardSecond(idx);
+            obedient.fowardSecond(val);
             break;
         case G2_BACKWARD:
-            obedient.backwardSecond(idx);
+            obedient.backwardSecond(val);
             break;
         case G2_LEFTTURN:
-            obedient.turnDegree(1, idx * 10);
+            obedient.turnDegree(1, val * 10);
             break;
         case G2_RIGHTTURN:
-            obedient.turnDegree(0, idx * 10);
+            obedient.turnDegree(0, val * 10);
             break;
     }
+    group = GROUP_2;
 }
