@@ -56,26 +56,26 @@ enum Group2 {
 
 // pick a number as a parameter
 enum Group3 {
-   G3_1 = 0;
-   G3_2 = 1;
-   G3_3 = 2;
-   G3_4 = 3;
-   G3_5 = 4;
-   G3_6 = 5;
-   G3_7 = 6;
-   G3_8 = 7;
-   G3_9 = 8;
-   G3_10 = 9;
-   G3_11 = 10;
-   G3_12 = 11;
-   G3_13 = 12;
-   G3_14 = 13;
-   G3_15 = 14;
-   G3_16 = 15;
-   G3_17 = 16;
-   G3_18 = 17;
-   G3_19 = 18;
-   G3_20 = 19;
+   G3_1 = 0,
+   G3_2 = 1,
+   G3_3 = 2,
+   G3_4 = 3,
+   G3_5 = 4,
+   G3_6 = 5,
+   G3_7 = 6,
+   G3_8 = 7,
+   G3_9 = 8,
+   G3_10 = 9,
+   G3_11 = 10,
+   G3_12 = 11,
+   G3_13 = 12,
+   G3_14 = 13,
+   G3_15 = 14,
+   G3_16 = 15,
+   G3_17 = 16,
+   G3_18 = 17,
+   G3_19 = 18,
+   G3_20 = 19,
 };
 
 //Basic or Advanced?
@@ -242,6 +242,10 @@ void action(){
           break;
       case GROUP_2:
           pickMovement(idx);
+          break;
+      case GROUP_3:
+          numberRecognized(idx);
+          break;
       case GROUP_4:
           basicOrAdvanced(idx);
           break;
@@ -253,10 +257,10 @@ void action(){
  * to announce that it gets the word from user. It only work if idx = G0_OBEDIENT
  */
 void trigger(int idx) {
-   if (idx == G0_OBEDIENT) {
+    if (idx == G0_OBEDIENT) {
         tonePlay(1500, 1000);
         group = GROUP_4;
-   }
+    }
 }
 
 /* This is the function that handle the user's choices between basic or advanced commands
@@ -265,16 +269,16 @@ void trigger(int idx) {
  * it will set the group to the value corresponding to basic and advanced group of commands.
  */
 void basicOrAdvanced(int idx) {
-   switch(idx) {
-     case G4_BASIC:
-         tonePlay(1500, 1000);
-         group = GROUP_1;
-         break;
-     case G4_ADVANCED:
-         tonePlay(1000, 1000);
-         group = GROUP_2;
-         break;
-   }
+    switch(idx) {
+        case G4_BASIC:
+            tonePlay(1500, 1000);
+            group = GROUP_1;
+            break;
+        case G4_ADVANCED:
+           tonePlay(1000, 1000);
+           group = GROUP_2;
+           break;
+    }
 }
 
 /* The basic function that will take one parameter of idx indicator and based on the value of idx to determine which function will be called inside itself.
@@ -291,30 +295,30 @@ void basicOrAdvanced(int idx) {
  * The function will return nothing.     
  */
 void basic(int idx) {
-   tonePlay(1000, 1000);
-   switch(idx) {
-     case G1_FOWARD:
-         obedient.foward();
-//         break;
-     case G1_BACKWARD:
-         obedient.backward();
-//         break;
-     case G1_LEFTTURN:
-         obedient.turnLeft();
-         break;
-     case G1_RIGHTTURN:
-         obedient.turnRight();
-         break;
-     case G1_TURNBACKLEFT:
-         obedient.turnBackLeft();
-         break;
-     case G1_TURNBACKRIGHT:
-         obedient.turnBackRight();
-         break;
-     case G1_STOP:
-         group = GROUP_4;
-         break;
-   }
+    tonePlay(1000, 1000);
+    switch(idx) {
+        case G1_FOWARD:
+            obedient.foward();
+            break;
+        case G1_BACKWARD:
+            obedient.backward();
+            break;
+        case G1_LEFTTURN:
+            obedient.turnLeft();
+            break;
+        case G1_RIGHTTURN:
+            obedient.turnRight();
+            break;
+        case G1_TURNBACKLEFT:
+            obedient.turnBackLeft();
+            break;
+        case G1_TURNBACKRIGHT:
+            obedient.turnBackRight();
+            break;
+        case G1_STOP:
+            group = GROUP_4;
+            break;
+    }
 }
 
 /* This is the function that direct to appropriate functions with numbers
@@ -330,44 +334,47 @@ void basic(int idx) {
 *  the Obedient).
 */
 void pickMovement(int idx) {
-   group = GROUP_3;
-   switch(idx) {
-       case G2_FOWARD:
-           tonePlay(1000, 1000);
-           id = G2_FOWARD;
-           break;
-       case G2_BACKWARD:
-           tonePlay(1200, 1000);
-           id = G2_BACKWARD;
-           break;
-       case G2_RIGHTTURN:
-           tonePlay(1400, 1000);
-           id = G2_RIGHTTURN;
-           break;
-       case G2_LEFTTURN:
-           tonePlay(1600, 1000);
-           id = G2_LEFTTURN;
-           break;
-       case G2_STOP:
-           tonePlay(1800, 1000);
-           group = GROUP_4;
-           break;
-   }
+    group = GROUP_3;
+    switch(idx) {
+        case G2_FOWARD:
+            tonePlay(1000, 1000);
+            id = G2_FOWARD;
+            break;
+        case G2_BACKWARD:
+            tonePlay(1200, 1000);
+            id = G2_BACKWARD;
+            break;
+        case G2_RIGHTTURN:
+            tonePlay(1400, 1000);
+            id = G2_RIGHTTURN;
+            break;
+        case G2_LEFTTURN:
+            tonePlay(1600, 1000);
+            id = G2_LEFTTURN;
+            break;
+        case G2_STOP:
+            tonePlay(1800, 1000);
+            group = GROUP_4;
+            break;
+    }
 }
 
 /* This is the function that recognizes a number said to the Obedient. This recognized numbers will be used as a parameter in numberRecognized along
  * with the id indicator that we already set up in group 2 and will call the approriate function that determine the movement of Obedient.
 */
 void numberRecognized(int idx) {
-   switch(id) {
-      case G2_FOWARD:
-         obedient.fowardSecond(idx);
-         break;
-      case G2_BACKWARD:
-         obedient.backwardSecond(idx);
-      case G2_LEFTTURN:
-         obedient.turnDegree(1, idx * 10);
-      case G2_RIGHTTURN:
-         obedient.turnDegree(0, idx * 10);
-   }
+    switch(id) {
+        case G2_FOWARD:
+            obedient.fowardSecond(idx);
+            break;
+        case G2_BACKWARD:
+            obedient.backwardSecond(idx);
+            break;
+        case G2_LEFTTURN:
+            obedient.turnDegree(1, idx * 10);
+            break;
+        case G2_RIGHTTURN:
+            obedient.turnDegree(0, idx * 10);
+            break;
+    }
 }
