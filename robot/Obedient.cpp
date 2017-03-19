@@ -24,13 +24,13 @@ void Obedient::attachServo() {
 //Foward with Second
 void Obedient::fowardSecond(int second) {
     move(1, second);
-    stopSecond(1);
+    // stopSecond(1);
 }
 
 //Move backward with Second
 void Obedient::backwardSecond(int second) {
     move(0, second);
-    stopSecond(1);	
+    // stopSecond(1);	
 }
 
 //Stop with Second
@@ -42,7 +42,7 @@ void Obedient::stopSecond(int second) {
 
 //Default stop
 void Obedient::stop() {
-    stopSecond(10);
+    stopSecond(1);
 }
 
 //Default Foward

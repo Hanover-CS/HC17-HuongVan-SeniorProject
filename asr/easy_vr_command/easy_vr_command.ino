@@ -40,7 +40,7 @@ enum Group1 {
   G1_BACKWARD = 1,
   G1_LEFTTURN = 2,
   G1_RIGHTTURN = 3,
-  G1_TURNBACKLEFT = 4,
+  G1_BACKLEFT = 4,
   G1_TURNBACKRIGHT = 5,
   G1_STOP = 6,
 };
@@ -306,7 +306,7 @@ void basic(int idx) {
         case G1_RIGHTTURN:
             obedient.turnRight();
             break;
-        case G1_TURNBACKLEFT:
+        case G1_BACKLEFT:
             obedient.turnBackLeft();
             break;
         case G1_TURNBACKRIGHT:
@@ -366,15 +366,19 @@ void numberRecognized(int idx) {
     switch(id) {
         case G2_FOWARD:
             obedient.fowardSecond(val);
+            obedient.stop();
             break;
         case G2_BACKWARD:
             obedient.backwardSecond(val);
+            obedient.stop();
             break;
         case G2_LEFTTURN:
             obedient.turnDegree(1, val * 10);
+            obedient.stop();
             break;
         case G2_RIGHTTURN:
             obedient.turnDegree(0, val * 10);
+            obedient.stop();
             break;
     }
     group = GROUP_2;
