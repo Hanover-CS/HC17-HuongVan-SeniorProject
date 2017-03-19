@@ -44,9 +44,6 @@ extern const int G3_14 = 13;
 extern const int G3_15 = 14;
 extern const int G3_16 = 15;
 extern const int G3_17 = 16;
-extern const int G3_18 = 17;
-extern const int G3_19 = 18;
-extern const int G3_20 = 19;
 
 extern int group = -1;
 extern int id = -1;
