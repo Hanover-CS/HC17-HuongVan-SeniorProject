@@ -56,7 +56,26 @@ enum Group2 {
 
 // pick a number as a parameter
 enum Group3 {
- 
+   G3_1 = 0;
+   G3_2 = 1;
+   G3_3 = 2;
+   G3_4 = 3;
+   G3_5 = 4;
+   G3_6 = 5;
+   G3_7 = 6;
+   G3_8 = 7;
+   G3_9 = 8;
+   G3_10 = 9;
+   G3_11 = 10;
+   G3_12 = 11;
+   G3_13 = 12;
+   G3_14 = 13;
+   G3_15 = 14;
+   G3_16 = 15;
+   G3_17 = 16;
+   G3_18 = 17;
+   G3_19 = 18;
+   G3_20 = 19;
 };
 
 //Basic or Advanced?
@@ -171,14 +190,14 @@ void loop() {
     action();
   }
   // errors or timeout or not recognized words
-  else {
-    if (easyvr.isTimeout())
-      Serial.println("Timed out, try again...");
-    int16_t err = easyvr.getError();
-    if (err >= 0) {
-      Serial.print("Error ");
-      Serial.println(err, HEX);
-    }
+   else {
+      if (easyvr.isTimeout())
+         Serial.println("Timed out, try again...");
+      int16_t err = easyvr.getError();
+      if (err >= 0) {
+         Serial.print("Error ");
+         Serial.println(err, HEX);
+   }
   }
 }
 
@@ -188,8 +207,8 @@ void loop() {
  * the sound will last for 1s by calling buil-int delay with approriate value.
  */
 void tonePlay(int sound1, int frequency) {
-  tone(5, sound1, frequency);
-  delay(1000);
+   tone(5, sound1, frequency);
+   delay(1000);
 }
 
 /*
@@ -206,10 +225,8 @@ void tonePlay(int sound1, int frequency) {
  *    to GROUP_2 in order to pick different functions.
  * The function will return nothing.
  */
-void action()
-{
-   switch (group)
-   {
+void action(){
+   switch (group){
       case GROUP_0:
 //      switch (idx)
 //      {
@@ -280,10 +297,10 @@ void basic(int idx) {
    switch(idx) {
      case G1_FOWARD:
          obedient.foward();
-         break;
+//         break;
      case G1_BACKWARD:
          obedient.backward();
-         break;
+//         break;
      case G1_LEFTTURN:
          obedient.turnLeft();
          break;
