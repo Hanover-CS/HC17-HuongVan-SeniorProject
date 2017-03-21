@@ -13,6 +13,7 @@
 Obedient::Obedient(int servoLeft, int servoRight) {
     _servoLeft = servoLeft;
     _servoRight = servoRight;
+    currentState = -1;
 }
 
 /**************************Public Method*************************************/
