@@ -15,6 +15,9 @@ class Obedient {
         //Constructor
         Obedient(int servoLeft, int servoRight);
 
+        //Setters
+        void Obedient::setCurrentState(int current);
+
         //Initial Servos
         void attachServo();
 

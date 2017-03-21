@@ -107,6 +107,10 @@ void Obedient::turnDegree(int dir, int degree) {
     }
 }
 
+void Obedient::setCurrentState(int current) {
+    currentState = current;
+}
+
 /**************************END*******************************************/
 
 /**************************Private Method************************************/
