@@ -16,10 +16,10 @@ class Obedient {
         Obedient(int servoLeft, int servoRight);
 
         //Setters
-        void Obedient::setCurrentState(int current);
+        void setCurrentState(int current);
 
         //Getters
-        int Obedient::getCurrentState();
+        int getCurrentState();
 
         //Initial Servos
         void attachServo();
