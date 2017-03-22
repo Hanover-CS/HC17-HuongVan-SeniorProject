@@ -27,6 +27,7 @@ enum Groups {
   GROUP_2 = 2, //direction
   GROUP_3 = 3, //group of numbers
   GROUP_4 = 4, //basicOrAdvanced
+  SENSOR = 5,
 };
 
 //Trigger command idx's
@@ -79,6 +80,18 @@ enum Group3 {
 enum Group4 {
   G4_BASIC = 0,
   G4_ADVANCED = 1,
+};
+
+// Sensor commands
+enum Group5 {
+  SENSOR_FOWARD = 0,
+  SENSOR_BACKWARD = 1,
+  SENSOR_LEFTTURN = 2,
+  SENSOR_RIGHTTURN = 3,
+  SENSOR_BACKLEFT = 4,
+  SENSOR_TURNBACKRIGHT = 5,
+  SENSOR_STOP = 6,
+  SENSOR_MAIN
 };
 
 // variable group to keep track of the current group within action function
