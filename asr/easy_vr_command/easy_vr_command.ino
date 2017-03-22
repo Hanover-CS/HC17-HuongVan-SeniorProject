@@ -27,7 +27,7 @@ enum Groups {
   GROUP_2 = 2, //direction
   GROUP_3 = 3, //group of numbers
   GROUP_4 = 4, //basicOrAdvanced
-  SENSOR = 5,
+  GROUP_5 = 5, //sensor
 };
 
 //Trigger command idx's
@@ -62,18 +62,6 @@ enum Group3 {
    G3_3 = 2,
    G3_4 = 3,
    G3_5 = 4,
-   G3_6 = 5,
-   G3_7 = 6,
-   G3_8 = 7,
-   G3_9 = 8,
-   G3_10 = 9,
-   G3_11 = 10,
-   G3_12 = 11,
-   G3_13 = 12,
-   G3_14 = 13,
-   G3_15 = 14,
-   G3_16 = 15,
-   G3_17 = 16,
 };
 
 //Basic or Advanced?
@@ -192,8 +180,7 @@ void loop() {
     }
     else
       Serial.println();
-	// beep
-    easyvr.playSound(0, EasyVR::VOL_FULL);
+      
     // perform some action
     action();
   }

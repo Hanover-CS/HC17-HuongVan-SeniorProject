@@ -36,7 +36,10 @@ void action(){
           numberRecognized(idx);
           break;
       case GROUP_4:
-          basicOrAdvanced(idx);
+          mainMenu(idx);
+          break;
+      case GROUP_5:
+          sensor(idx);
           break;
   }
 }
@@ -57,7 +60,7 @@ void trigger(int idx) {
  * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
  * it will set the group to the value corresponding to basic and advanced group of commands.
  */
-void basicOrAdvanced(int idx) {
+void mainMenu(int idx) {
     switch(idx) {
         case G4_BASIC:
             tonePlay(1500, 1000);
@@ -67,5 +70,8 @@ void basicOrAdvanced(int idx) {
            tonePlay(1000, 1000);
            group = GROUP_2;
            break;
+        case G4_SENSOR:
+           tonePlay(1200, 1000);
+           group = GROUP_5;
     }
 }
