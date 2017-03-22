@@ -68,6 +68,7 @@ enum Group3 {
 enum Group4 {
   G4_BASIC = 0,
   G4_ADVANCED = 1,
+  G4_SENSOR = 2,
 };
 
 // Sensor commands
