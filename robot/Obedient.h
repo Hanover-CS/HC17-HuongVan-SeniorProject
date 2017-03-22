@@ -18,6 +18,9 @@ class Obedient {
         //Setters
         void Obedient::setCurrentState(int current);
 
+        //Getters
+        int Obedient::getCurrentState(int current);
+
         //Initial Servos
         void attachServo();
 
