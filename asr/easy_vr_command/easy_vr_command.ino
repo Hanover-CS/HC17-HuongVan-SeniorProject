@@ -44,6 +44,7 @@ enum Group1 {
   G1_BACKLEFT = 4,
   G1_TURNBACKRIGHT = 5,
   G1_STOP = 6,
+  G1_MAINMENU = 7,
 };
 
 // pick a movement
@@ -52,7 +53,7 @@ enum Group2 {
   G2_BACKWARD = 1,
   G2_LEFTTURN = 2,
   G2_RIGHTTURN = 3,
-  G2_STOP = 4,
+  G2_MAINMENU = 4,
 };
 
 // pick a number as a parameter
@@ -80,7 +81,7 @@ enum Group5 {
   SENSOR_BACKLEFT = 4,
   SENSOR_TURNBACKRIGHT = 5,
   SENSOR_STOP = 6,
-  SENSOR_MAIN
+  SENSOR_MAINMENU = 7,
 };
 
 // variable group to keep track of the current group within action function

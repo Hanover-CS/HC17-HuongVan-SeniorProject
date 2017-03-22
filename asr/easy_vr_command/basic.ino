@@ -32,7 +32,7 @@ void basic(int idx) {
         case G1_TURNBACKRIGHT:
             obedient.turnBackRight();
             break;
-        case G1_STOP:
+        case G1_MAINMENU:
             group = GROUP_4;
             break;
     }

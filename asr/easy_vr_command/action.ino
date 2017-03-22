@@ -1,3 +1,5 @@
+// Declare the subgroup indicator for group 3 and group 4.
+int g;
 /*
  * Function action that will determine which group we are at and what commands are spoken. It takes no arguments and will direct through what values group/idx/id (state indicators)
  * are recognized by the speech recognition shield. The action will use switch with group indicator to put the flow in right group. 
@@ -27,7 +29,7 @@ void action(){
           trigger(idx);
           break;
       case GROUP_1:
-          basic(idx);
+          sensorOrBasic(g);
           break;
       case GROUP_2:
           pickMovement(idx);
@@ -37,9 +39,6 @@ void action(){
           break;
       case GROUP_4:
           mainMenu(idx);
-          break;
-      case GROUP_5:
-          sensor(idx);
           break;
   }
 }
@@ -65,6 +64,7 @@ void mainMenu(int idx) {
         case G4_BASIC:
             tonePlay(1500, 1000);
             group = GROUP_1;
+            g = GROUP_1;
             break;
         case G4_ADVANCED:
            tonePlay(1000, 1000);
@@ -72,6 +72,16 @@ void mainMenu(int idx) {
            break;
         case G4_SENSOR:
            tonePlay(1200, 1000);
-           group = GROUP_5;
+           group = GROUP_1;
+           g = GROUP_5;
     }
 }
+
+void sensorOrBasic(int id) {
+    if (id == GROUP_5) {
+        sensor(idx);
+    } else {
+        basic(idx);
+    }
+}
+

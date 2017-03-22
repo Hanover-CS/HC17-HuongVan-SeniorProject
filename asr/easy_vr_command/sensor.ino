@@ -53,7 +53,7 @@ void sensor(int idx) {
             obedient.stop();
             obedient.setCurrentState(2);
             break;
-        case SENSOR_MAIN:
+        case SENSOR_MAINMENU:
             group = GROUP_4;
             currentState = -1;
             break;   
