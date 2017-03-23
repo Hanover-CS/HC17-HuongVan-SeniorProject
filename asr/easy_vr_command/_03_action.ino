@@ -18,15 +18,6 @@ int g;
 void action(){
    switch (group){
       case GROUP_0:
-//      switch (idx)
-//      {
-//      case G0_OBEDIENT:
-//        // write your action code here
-//        // group = GROUP_X; <-- or jump to another group X for composite commands
-//        tonePlay(1500, 1000); //backward sound
-//        group = GROUP_1;
-//        break;
-//      }
           trigger(idx);
           break;
       case GROUP_1:
@@ -75,15 +66,17 @@ void mainMenu(int idx) {
             tonePlay(1200, 1000);
             group = GROUP_1;
             g = GROUP_5;
+            break;
         case G4_LIST:
             tonePlay(1200, 1000);
             group = GROUP_1;
             g = GROUP_6;
+            break;
     }
 }
 
-void sensorOrBasicOrList(int id) {
-    switch(id) {
+void sensorOrBasicOrList(int choice) {
+    switch(choice) {
         case GROUP_1:
             basic(idx);
             break;

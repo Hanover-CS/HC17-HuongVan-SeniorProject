@@ -32,11 +32,11 @@ void sensor(int idx) {
     switch(idx) {
         case SENSOR_FOWARD:
             obedient.fowardSecond(1);
-            obedient.setCurrentState(0);
+            obedient.setCurrentState(FOWARD);
             break;
         case SENSOR_BACKWARD:
             obedient.backwardSecond(1);
-            obedient.setCurrentState(1);
+            obedient.setCurrentState(BACKWARD);
             break;
         case SENSOR_LEFTTURN:
             obedient.turnLeft();
@@ -52,16 +52,15 @@ void sensor(int idx) {
             break;
         case SENSOR_STOP:
             obedient.stop();
-            obedient.setCurrentState(2);
+            obedient.setCurrentState(STOP);
             break;
         case SENSOR_MAINMENU:
             group = GROUP_4;
-            currentState = -1;
+            currentState = DEFAULT_STATE;
             break;   
     }
     currentState = obedient.getCurrentState();
-    resumeToCurrentState(currentState);
-    
+    resumeToCurrentState(currentState);    
 }
 
 void resumeToCurrentState(int current) {
