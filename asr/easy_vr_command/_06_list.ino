@@ -56,4 +56,27 @@ void doList() {
     }
 }
 
+void doAction(int act) {
+    switch(act) {
+        case LIST_FOWARD:
+            obedient.foward();
+            break;
+        case LIST_BACKWARD:
+            obedient.backward();
+            break;
+        case LIST_LEFTTURN:
+            obedient.turnLeft();
+            break;
+        case LIST_RIGHTTURN:
+            obedient.turnRight();
+            break;
+        case LIST_BACKLEFT:
+            obedient.turnBackLeft();
+            break;
+        case LIST_TURNBACKRIGHT:
+            obedient.turnBackRight();
+            break;   
+    }
+}
+
 
