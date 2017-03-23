@@ -49,6 +49,7 @@ enum Group4 {
   G4_BASIC = 0,
   G4_ADVANCED = 1,
   G4_SENSOR = 2,
+  G4_LIST = 3,
 };
 
 // Sensor commands

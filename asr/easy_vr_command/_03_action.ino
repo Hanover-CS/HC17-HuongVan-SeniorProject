@@ -68,13 +68,17 @@ void mainMenu(int idx) {
             g = GROUP_1;
             break;
         case G4_ADVANCED:
-           tonePlay(1000, 1000);
-           group = GROUP_2;
-           break;
+            tonePlay(1000, 1000);
+            group = GROUP_2;
+            break;
         case G4_SENSOR:
-           tonePlay(1200, 1000);
-           group = GROUP_1;
-           g = GROUP_5;
+            tonePlay(1200, 1000);
+            group = GROUP_1;
+            g = GROUP_5;
+        case G4_LIST:
+            tonePlay(1200, 1000);
+            group = GROUP_1;
+            g = GROUP_6;
     }
 }
 
