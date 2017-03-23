@@ -4,6 +4,7 @@
   * However, the turn will only perform once and the obedient will get back to its previous state.
   * This module will then be loaded into action module as part of the action function in easy_vr_command.
   */
+  /**************************************End of module introduction ******************************************************/
  const int FOWARD = 0;
  const int BACKWARD = 1;
  const int STOP = 2;

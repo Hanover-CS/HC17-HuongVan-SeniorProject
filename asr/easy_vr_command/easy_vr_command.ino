@@ -1,5 +1,6 @@
 #include "Arduino.h"
 #include <Obedient.h>
+#include <QueueArray.h>
 
 #if !defined(SERIAL_PORT_MONITOR)
   #error "Arduino version not supported. Please update your IDE to the latest version."
@@ -28,6 +29,7 @@ enum Groups {
   GROUP_3 = 3, //group of numbers
   GROUP_4 = 4, //basicOrAdvanced
   GROUP_5 = 5, //sensor
+  GROUP_6 = 6, //list of commands
 };
 
 //Trigger command idx's
@@ -82,6 +84,18 @@ enum Group5 {
   SENSOR_TURNBACKRIGHT = 5,
   SENSOR_STOP = 6,
   SENSOR_MAINMENU = 7,
+};
+
+//List of commands
+enum Group6 {
+  LIST_FOWARD = 0,
+  LIST_BACKWARD = 1,
+  LIST_LEFTTURN = 2,
+  LIST_RIGHTTURN = 3,
+  LIST_BACKLEFT = 4,
+  LIST_TURNBACKRIGHT = 5,
+  LIST_MAINMENU = 7,
+  LIST_GO = 8,
 };
 
 // variable group to keep track of the current group within action function

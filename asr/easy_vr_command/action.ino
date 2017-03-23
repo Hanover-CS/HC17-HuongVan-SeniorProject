@@ -1,3 +1,4 @@
+/**************************************End of module introduction ******************************************************/
 // Declare the subgroup indicator for group 3 and group 4.
 int g;
 /*
