@@ -30,7 +30,7 @@ void action(){
           trigger(idx);
           break;
       case GROUP_1:
-          sensorOrBasic(g);
+          sensorOrBasicOrList(g);
           break;
       case GROUP_2:
           pickMovement(idx);
@@ -78,11 +78,17 @@ void mainMenu(int idx) {
     }
 }
 
-void sensorOrBasic(int id) {
-    if (id == GROUP_5) {
-        sensor(idx);
-    } else {
-        basic(idx);
+void sensorOrBasicOrList(int id) {
+    switch(id) {
+        case GROUP_1:
+            basic(idx);
+            break;
+        case GROUP_5:
+            sensor(idx);
+            break;
+        case GROUP_6:
+            listCommand(idx); 
+            break;   
     }
 }
 
