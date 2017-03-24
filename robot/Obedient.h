@@ -1,7 +1,14 @@
 /*
-	Obedient.h - Library for directing Obedient robot with movements
-	Created by Hoang N.H. Van, November 14, 2016
-	Released into public domain.
+ *  Obedient.h - Library for directing Obedient robot with movements
+ *  This is the Obedient class definition file that will serve as function declarations,
+ *  It will have class constructor - to create instance of the Obedient class
+ *  Setters - functions that set private variable of each instance of Obedient class.
+ *  Getters - functions that get private variable of each instance of Obedient class
+ *  Movements - functions that will help Obedient to direct its movements. Those functions are built
+ *              using already existed function from Arduino library.
+ *  This will be downloaded to Arduino libraries folder so that the sketch can be compiled and worked.
+ *  Created by Hoang N.H. Van, November 14, 2016
+ *  Released into public domain.
 */
 
 #ifndef Obedient_h
