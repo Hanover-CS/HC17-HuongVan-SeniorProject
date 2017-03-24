@@ -73,7 +73,8 @@ class Obedient {
          * @instance
          */
         int getCurrentState();
-
+        
+        /************End Getters**********************/
         /*
          * Attach servo port to real robot wheels that can control by Arduino board
          * 
