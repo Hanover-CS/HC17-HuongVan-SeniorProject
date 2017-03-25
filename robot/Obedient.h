@@ -116,6 +116,15 @@ class Obedient {
          */
         void Obedient::fowardDistance(int distance);
         /*
+         * Direct the Obedient to move straight.
+         * @example obedient.fowardNonStop().
+         * @memberof Obedient
+         * @static
+         * @instance
+         * this function will be used to implement fowardDistance function later
+         */
+        void Obedient::fowardNonStop();
+        /*
          * Direct Obedient to go backward with certain distance.
          *        
          * @param {integer} distance - distance travel in inches
