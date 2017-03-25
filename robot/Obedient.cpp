@@ -63,6 +63,7 @@ void Obedient::attachServo() {
 void Obedient::fowardSecond(int second) {
     move(dirFoward, second);
 }
+
 /*
  * Direct Obedient to go foward with certain distance.
  *
@@ -80,6 +81,7 @@ void Obedient::fowardDistance(int distance) {
     fowardNonStop();
     delay(timeTraveled);
 }
+
 /*
  * Direct Obedient to go backward with certain distance.
  *        
@@ -97,6 +99,7 @@ void Obedient::backwardDistance(int distance) {
     backwardNonstop();
     delay(timeTraveled);
 }
+
 /*
  * Direct Obedient to go backward with certain time.
  *
