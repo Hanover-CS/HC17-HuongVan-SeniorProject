@@ -292,7 +292,7 @@ int Obedient::getCurrentState() {
  * @instance
  * this function will be used to implement speedUp/slowDown function later
  */
-void Obedient::speedUp(int dir, int s) {
+void Obedient::speedUp() {
     pulseLeft = pulseLeft + 25;
     pulseRight = pulseRight - 25;
     if (pulseRight < 1300) {
@@ -316,7 +316,7 @@ void Obedient::speedUp(int dir, int s) {
  * @instance
  * this function will be used to implement speedUp/slowDown function later
  */
-void slowDown() {
+void Obedient::slowDown() {
     pulseLeft = pulseLeft - 25;
     pulseRight = pulseRight + 25;
     if (pulseRight > 1500) {
