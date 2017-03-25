@@ -144,6 +144,15 @@ class Obedient {
          */
         void backwardSecond(int second);
         /*
+         * Direct the Obedient to move straight.
+         * @example obedient.backwardNonStop().
+         * @memberof Obedient
+         * @static
+         * @instance
+         * this function will be used to implement fowardDistance function later
+         */
+        void Obedient::backwardNonStop()
+        /*
          * Stop the Obedient.
          *
          * @param {integer} second - time that Obedient will stop
