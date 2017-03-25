@@ -1,12 +1,13 @@
 //Groups and Commands
 enum Groups {
   GROUP_0 = 0, //trigger
-  GROUP_1 = 1, //basic
-  GROUP_2 = 2, //direction
+  GROUP_1 = 1, //Basic group
+  GROUP_2 = 2, //Advanced commands group
   GROUP_3 = 3, //group of numbers
-  GROUP_4 = 4, //basicOrAdvanced
-  GROUP_5 = 5, //sensor
-  GROUP_6 = 6, //list of commands
+  GROUP_4 = 4, //MainMenu
+  GROUP_5 = 5, //Sensor group
+  GROUP_6 = 6, //List group
+  GROUP_7 = 7, //Units group, Metric or Time
 };
 
 //Trigger command idx's
