@@ -151,7 +151,7 @@ class Obedient {
          * @instance
          * this function will be used to implement fowardDistance function later
          */
-        void backwardNonStop()
+        void backwardNonStop();
         /*
          * Stop the Obedient.
          *

@@ -33,7 +33,8 @@ enum Group2 {
   G2_BACKWARD = 1,
   G2_LEFTTURN = 2,
   G2_RIGHTTURN = 3,
-  G2_MAINMENU = 4,
+  G2_PICKUNIT = 4,
+  G2_MAINMENU = 5,
 };
 
 // pick a number as a parameter
@@ -77,4 +78,10 @@ enum Group6 {
   LIST_TURNBACKRIGHT = 5,
   LIST_MAINMENU = 7,
   LIST_GO = 8,
+};
+
+//List of commands
+enum Group7 {
+  UNIT_SECOND = 0,
+  UNIT_INCH = 1,
 };

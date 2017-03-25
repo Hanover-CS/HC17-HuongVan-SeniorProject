@@ -30,6 +30,9 @@ void pickMovement(int idx) {
             tonePlay(1600, 1000);
             id = G2_LEFTTURN;
             break;
+        case G2_PICKUNIT:
+            tonePlay(1600, 1000);
+            
         case G2_MAINMENU:
             tonePlay(1800, 1000);
             group = GROUP_4;

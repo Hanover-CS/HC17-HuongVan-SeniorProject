@@ -96,7 +96,7 @@ void Obedient::backwardDistance(int distance) {
     
     // It takes 1.62 second at default speed to travel 10 inches
     timeTraveled = distance * 1620 / 10;
-    backwardNonstop();
+    backwardNonStop();
     delay(timeTraveled);
 }
 
