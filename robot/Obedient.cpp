@@ -317,8 +317,8 @@ void Obedient::speedUp() {
  * this function will be used to implement speedUp/slowDown function later
  */
 void Obedient::slowDown() {
-    pulseLeft = pulseLeft - 25;
-    pulseRight = pulseRight + 25;
+    pulseLeft = pulseLeft - 50;
+    pulseRight = pulseRight + 50;
     if (pulseRight > 1500) {
         pulseRight = 1500;
     }
