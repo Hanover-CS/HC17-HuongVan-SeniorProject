@@ -43,7 +43,7 @@ void pickMovement(int idx) {
 /* This is the function that recognizes a number said to the Obedient. This recognized numbers will be used as a parameter in numberRecognized along
  * with the id indicator that we already set up in group 2 and will call the approriate function that determine the movement of Obedient.
  * after it perform the function, it will then set the group indicator back to group2 for the next performing function.
-*/
+ */
 void numberRecognized(int idx) {
     int val = idx + 1;    
     
@@ -67,3 +67,18 @@ void numberRecognized(int idx) {
     }
     group = GROUP_2;
 }
+
+/* This is the function that will help numberRecognized function to determine what unit it should call with the foward and backward function.
+ * @param {integer} val - the value that spoken to numberRecognized function and will be the value that will call with fowardSecond or fowardDistance
+ * @param {integer} unit - the value that determines what unit we are going to use
+ * The function will return nothing but will call an approriate function that will directs Obedient.
+ */
+void fowardWithUnit(int val, int unit) {
+    if (unit == UNIT_SECOND) {
+        obedient.fowardSecond(val);        
+    } else {
+        obedient.fowardDistance(val * 10); // since val will be from 1-5 but we want 1 represent for 10 inch.   
+    }
+    obedient.stop();
+}
+

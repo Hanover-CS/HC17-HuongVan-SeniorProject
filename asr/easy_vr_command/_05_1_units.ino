@@ -6,7 +6,11 @@
 *  The function will return nothing, but set `unit` variable to corresponding unit.
 */
 void pickUnit(int idx) {
-    tonePlay(1600, 1000);    
-    unit = idx;  
+    // Make a sound so that users know shield recognize their words
+    tonePlay(1600, 1000);  
+    // Set up the unit to the right unit  
+    unit = idx;
+    // Get back to the advanced group so that we can call function with the right unit.
+    group = GROUP_2 
 }
 

@@ -26,6 +26,9 @@ EasyVR easyvr(port);
 // Declares unit
 int8_t group, idx, id, unit;
 
+// Default unit is second.
+unit = 0;
+
 // Declares obedient
 Obedient obedient(10, 11);
 
