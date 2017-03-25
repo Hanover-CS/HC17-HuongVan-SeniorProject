@@ -260,6 +260,21 @@ void Obedient::setCurrentState(int current) {
     currentState = current;
 }
 
+/*
+ * Reset back to default values for all private variables
+ *
+ * `currentState` is set to DEFAULT_STATE
+ * `pulseLeft` is set to pulseLeftDefault
+ * `pulseRight` is set to pulseRightDefault
+ * @example obedient.setCurrentState(1)
+ * @memberof Obedient
+ * @instance
+ */
+void Obedient::reset() {
+    currentState = currentSateDefault;
+    pulseRight = pulseRightDefault;
+    pulseLeft = pulseLeftDefault;
+}
 /************Getters**********************/
 /*
  * Get value for `currentState`
