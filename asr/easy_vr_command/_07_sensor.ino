@@ -72,6 +72,7 @@ void sensor(int idx) {
 void resumeToCurrentState(int current) {
     switch(current) {
         case DEFAULT_STATE:
+            obedient.stop();
             break;
         case FOWARD:
             obedient.fowardSecond(1);
