@@ -7,7 +7,11 @@
 #include "Arduino.h"
 #include "Obedient.h"
 
-
+// Declare constant value here
+int const pulseLeftDefault = 1600;
+int const pulseRightDefault = 1400;
+int const pulseStop = 1500;
+int const currentSateDefault = -1;
 
 /*
  * Create a new `Obedient`
@@ -19,11 +23,14 @@
  * @memberof Obedient
  * @static
  * @public 
+ * @post-condition: the currentState is set to default value of -1 and pulseLeft = 1600, pulseRight = 1400
  */
 Obedient::Obedient(int servoLeft, int servoRight) {
     _servoLeft = servoLeft;
     _servoRight = servoRight;
-    currentState = -1;
+    currentState = currentSateDefault;
+    pulseRight = pulseRightDefault;
+    pulseLeft = pulseLeftDefault;
 }
 
 /**************************Settup Servo Method*************************************/
