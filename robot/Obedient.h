@@ -106,6 +106,16 @@ class Obedient {
          */
         void fowardSecond(int second);
         /*
+         * Direct Obedient to go foward with certain distance.
+         *        
+         * @param {integer} distance - distance travel in inches
+         * this has to be a multiple of 10 inches.
+         * @memberof Obedient
+         * @static
+         * @instance        
+         */
+        void Obedient::fowardDistance(int distance);
+        /*
          * Direct Obedient to go backward with certain time.
          *
          * @param {integer} second - time that Obedient will move
