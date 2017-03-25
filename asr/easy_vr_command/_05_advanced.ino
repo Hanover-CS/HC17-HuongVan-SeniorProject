@@ -32,7 +32,7 @@ void pickMovement(int idx) {
             break;
         case G2_PICKUNIT:
             tonePlay(1600, 1000);
-            
+            group = GROUP_7;
         case G2_MAINMENU:
             tonePlay(1800, 1000);
             group = GROUP_4;
