@@ -62,6 +62,8 @@ enum Group5 {
   SENSOR_TURNBACKRIGHT = 5,
   SENSOR_STOP = 6,
   SENSOR_MAINMENU = 7,
+  SENSOR_SPEEDUP = 9,
+  SENSOR_SLOWDOWN = 10,
 };
 
 //List of commands
