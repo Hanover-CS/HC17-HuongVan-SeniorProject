@@ -6,6 +6,7 @@
 *  The function will return nothing, but set `unit` variable to corresponding unit.
 */
 void pickUnit(int idx) {
+    tonePlay(1600, 1000);    
     unit = idx;  
 }
 

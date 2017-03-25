@@ -32,6 +32,9 @@ void action(){
       case GROUP_4:
           mainMenu(idx);
           break;
+      case GROUP_7:
+          pickUnit(idx);
+          break;
   }
 }
 
