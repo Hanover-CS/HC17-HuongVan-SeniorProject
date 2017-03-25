@@ -279,4 +279,27 @@ int Obedient::getCurrentState() {
     return currentState;
 }
 
+/*
+ * Speed the Obedient up
+ * The function takes no arguments and return nothing
+ * @postcondition: everytime the speed up function get called
+ * the pulseLeft increases by 25 and pulseRight reduces by 25
+ * @condition will be used so that the pulseLeft is never fall off 1700
+ * and pulseRight never goes below 1300
+ * @example obedient.speedUp().
+ * @memberof Obedient
+ * @static
+ * @instance
+ * this function will be used to implement speedUp/slowDown function later
+ */
+void Obedient::speedUp(int dir, int s) {
+    pulseLeft = pulseLeft + 25;
+    pulseRight = pulseRight - 25;
+    if (pulseRight < 1300) {
+        pulseRight = 1300;
+    }
+    if (pulseLeft > 1700) {
+        pulseLeft = 1700;
+    }
+}
 /**************************END***********************************************/

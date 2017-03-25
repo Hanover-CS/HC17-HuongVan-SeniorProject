@@ -216,7 +216,7 @@ class Obedient {
          * @instance
          * this function will be used to implement speedUp/slowDown function later
          */
-        void speedUp(int dir, int s);
+        void speedUp();
         /*
          * Slow the Obedient down
          * The function takes no arguments and return nothing
@@ -230,7 +230,7 @@ class Obedient {
          * @instance
          * this function will be used to implement speedUp/slowDown function later
          */
-        void slowDown(int dir, int s);
+        void slowDown();
 
     private:
         /* Declare private variable here
