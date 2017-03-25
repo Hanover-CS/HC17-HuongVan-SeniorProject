@@ -114,7 +114,7 @@ class Obedient {
          * @static
          * @instance        
          */
-        void Obedient::fowardDistance(int distance);
+        void fowardDistance(int distance);
         /*
          * Direct the Obedient to move straight.
          * @example obedient.fowardNonStop().
@@ -123,7 +123,7 @@ class Obedient {
          * @instance
          * this function will be used to implement fowardDistance function later
          */
-        void Obedient::fowardNonStop();
+        void fowardNonStop();
         /*
          * Direct Obedient to go backward with certain distance.
          *        
@@ -133,7 +133,7 @@ class Obedient {
          * @static
          * @instance        
          */
-        void Obedient::backwardDistance(int distance);
+        void backwardDistance(int distance);
         /*
          * Direct Obedient to go backward with certain time.
          *
@@ -151,7 +151,7 @@ class Obedient {
          * @instance
          * this function will be used to implement fowardDistance function later
          */
-        void Obedient::backwardNonStop()
+        void backwardNonStop()
         /*
          * Stop the Obedient.
          *
