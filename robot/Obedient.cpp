@@ -238,14 +238,14 @@ void Obedient::circleRight() {
  * This function will be used to implement turning functions later
  */
 void Obedient::turnDegree(int dir, int degree) {
-    degree = (int)(degree / 0.95) * 8;
+    degree = (int)(degree / 1.04) * 8;
     if (dir == dirLeft) {
-        left.writeMicroseconds(1300);
-        right.writeMicroseconds(1300);
+        left.writeMicroseconds(1425);
+        right.writeMicroseconds(1425);
         delay(degree);
     } else {
-        left.writeMicroseconds(1700);
-        right.writeMicroseconds(1700);
+        left.writeMicroseconds(1580);
+        right.writeMicroseconds(1580);
         delay(degree);
     }
 }

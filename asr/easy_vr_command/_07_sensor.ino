@@ -31,11 +31,11 @@ void sensor(int idx) {
     tonePlay(1000, 1000);
     switch(idx) {
         case SENSOR_FOWARD:
-            obedient.fowardSecond(1);
+            obedient.fowardNonStop();
             obedient.setCurrentState(FOWARD);
             break;
         case SENSOR_BACKWARD:
-            obedient.backwardSecond(1);
+            obedient.backwardNonStop();
             obedient.setCurrentState(BACKWARD);
             break;
         case SENSOR_LEFTTURN:
@@ -75,10 +75,10 @@ void resumeToCurrentState(int current) {
             obedient.stop();
             break;
         case FOWARD:
-            obedient.fowardSecond(1);
+            obedient.fowardNonStop();
             break;
         case BACKWARD:
-            obedient.backwardSecond(1);
+            obedient.backwardNonStop();
             break;
         case STOP:
             obedient.stop();
