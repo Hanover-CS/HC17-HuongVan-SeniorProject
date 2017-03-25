@@ -375,4 +375,30 @@ void Obedient::slowDown() {
         pulseLeft = 1500;
     }
 }
+/**************************Helper Functions**********************************/
+/*
+ * Direct the Obedient to move straight.
+ * @example obedient.fowardNonStop().
+ * @memberof Obedient
+ * @static
+ * @instance
+ * this function will be used to implement fowardDistance function later
+ */
+void Obedient::fowardNonStop() {
+    left.writeMicroseconds(pulseLeft);
+    right.writeMicroseconds(pulseRight);
+}
+
+/*
+ * Direct the Obedient to move straight.
+ * @example obedient.backwardNonStop().
+ * @memberof Obedient
+ * @static
+ * @instance
+ * this function will be used to implement fowardDistance function later
+ */
+void Obedient::backwardNonStop() {
+    left.writeMicroseconds(pulseRight);
+    right.writeMicroseconds(pulseLeft);
+}
 /**************************END***********************************************/
