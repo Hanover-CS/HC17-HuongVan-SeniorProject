@@ -58,11 +58,12 @@ void loop() {
         Serial.println("Running...");
         servoLeft.writeMicroseconds(pulse);
         //servoRight.writeMicrosecond(pulse);
-        delay(6000)
+        delay(6000);
 
         // stop the servo after the test.
         servoLeft.writeMicroseconds(1500);
         //servoRight.writeMicroseconds(1500);
+        delay(5000);
     }
   
 

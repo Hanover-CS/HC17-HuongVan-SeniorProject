@@ -73,7 +73,7 @@ class Obedient {
          * @instance
          */
         int getCurrentState();
-        
+
         /************End Getters**********************/
         /*
          * Attach servo port to real robot wheels that can control by Arduino board
@@ -205,7 +205,15 @@ class Obedient {
         void move(int dir, int s);
 
     private:
-        int _servoLeft, _servoRight, currentState;
+        /* Declare private variable here
+         * _servoLeft: store the port number the connect to left wheel of the Obedient
+         * _servoRight: store the port number the connect to right wheel of the Obedient
+         * currentState: store the value of the current state of the Obedient (foward, backward, stop, and default)
+         * pulseLeft : store value of pulse that will run on servoLeft
+         * pulseRight: store value of pulse that will run on servoRight
+         */
+        int _servoLeft, _servoRight, currentState, pulseLeft, pulseRight;
+        // Initial the servo left and right for robot here.
         Servo left, right;
 };
 #endif
