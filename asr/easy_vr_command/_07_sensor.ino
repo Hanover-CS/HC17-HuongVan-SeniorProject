@@ -54,6 +54,12 @@ void sensor(int idx) {
             obedient.stop();
             obedient.setCurrentState(STOP);
             break;
+        case SENSOR_SPEEDUP:
+            obedient.speedUp();
+            break;
+        case SENSOR_SLOWDOWN:
+            obedient.slowDown();
+            break;
         case SENSOR_MAINMENU:
             group = GROUP_4;
             currentState = DEFAULT_STATE;
