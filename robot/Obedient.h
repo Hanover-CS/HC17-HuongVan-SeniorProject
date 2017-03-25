@@ -56,6 +56,18 @@ class Obedient {
          * @instance
          */
         void setCurrentState(int current);
+        /*
+         * Reset back to default values for all private variables
+         *
+         * `currentState` is set to DEFAULT_STATE
+         * `pulseLeft` is set to pulseLeftDefault
+         * `pulseRight` is set to pulseRightDefault
+         * @param {integer} current - the value that will be assigned to `currentState`
+         * @example obedient.setCurrentState(1)
+         * @memberof Obedient
+         * @instance
+         */
+        void reset();
 
         /************Getters**********************/
         /*

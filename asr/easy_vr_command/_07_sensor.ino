@@ -62,7 +62,7 @@ void sensor(int idx) {
             break;
         case SENSOR_MAINMENU:
             group = GROUP_4;
-            currentState = DEFAULT_STATE;
+            obedient.setCurrentState(DEFAULT_STATE);         
             break;   
     }
     currentState = obedient.getCurrentState();
