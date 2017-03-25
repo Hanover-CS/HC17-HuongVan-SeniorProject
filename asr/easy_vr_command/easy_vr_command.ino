@@ -18,7 +18,7 @@
 #endif
 
 #include "EasyVR.h"
-
+// Declare easyvr
 EasyVR easyvr(port);
 // variable group to keep track of the current group within action function
 // variable idx to keep track of the commands in each group within subfunctions of action function
