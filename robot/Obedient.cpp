@@ -74,9 +74,27 @@ void Obedient::fowardSecond(int second) {
  */
 void Obedient::fowardDistance(int distance) {
     int timeTraveled;
-
-    timeTraveled = distance * 160
+    
+    // It takes 1.62 second at default speed to travel 10 inches
+    timeTraveled = distance * 1620 / 10;
     fowardNonStop();
+    delay(timeTraveled);
+}
+/*
+ * Direct Obedient to go backward with certain distance.
+ *        
+ * @param {integer} distance - distance travel in inches
+ * this has to be a multiple of 10 inches.
+ * @memberof Obedient
+ * @static
+ * @instance        
+ */
+void Obedient::backwardDistance(int distance) {
+    int timeTraveled;
+    
+    // It takes 1.62 second at default speed to travel 10 inches
+    timeTraveled = distance * 1620 / 10;
+    backwardNonstop();
     delay(timeTraveled);
 }
 /*
