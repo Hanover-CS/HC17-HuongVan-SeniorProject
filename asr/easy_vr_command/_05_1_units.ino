@@ -11,6 +11,6 @@ void pickUnit(int idx) {
     // Set up the unit to the right unit  
     unit = idx;
     // Get back to the advanced group so that we can call function with the right unit.
-    group = GROUP_2 
+    group = GROUP_2; 
 }
 

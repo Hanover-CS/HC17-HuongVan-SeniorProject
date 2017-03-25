@@ -33,6 +33,7 @@ void pickMovement(int idx) {
         case G2_PICKUNIT:
             tonePlay(1600, 1000);
             group = GROUP_7;
+            break;
         case G2_MAINMENU:
             tonePlay(1800, 1000);
             group = GROUP_4;
@@ -49,12 +50,10 @@ void numberRecognized(int idx) {
     
     switch(id) {
         case G2_FOWARD:
-            obedient.fowardSecond(val);
-            obedient.stop();
+            fowardWithUnit(val, unit);
             break;
         case G2_BACKWARD:
-            obedient.backwardSecond(val);
-            obedient.stop();
+            backwardWithUnit(val, unit);
             break;
         case G2_LEFTTURN:
             obedient.turnDegree(1, val * 10);
@@ -82,3 +81,16 @@ void fowardWithUnit(int val, int unit) {
     obedient.stop();
 }
 
+/* This is the function that will help numberRecognized function to determine what unit it should call with the backward function.
+ * @param {integer} val - the value that spoken to numberRecognized function and will be the value that will call with backward or backwardDistance
+ * @param {integer} unit - the value that determines what unit we are going to use
+ * The function will return nothing but will call an approriate function that will directs Obedient.
+ */
+void backwardWithUnit(int val, int unit) {
+    if (unit == UNIT_SECOND) {
+        obedient.backwardSecond(val);        
+    } else {
+        obedient.backwardDistance(val * 10); // since val will be from 1-5 but we want 1 represent for 10 inch.   
+    }
+    obedient.stop();
+}

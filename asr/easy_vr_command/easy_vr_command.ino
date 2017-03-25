@@ -26,14 +26,14 @@ EasyVR easyvr(port);
 // Declares unit
 int8_t group, idx, id, unit;
 
-// Default unit is second.
-unit = 0;
-
 // Declares obedient
 Obedient obedient(10, 11);
 
 void setup() {
+  //Attach servo left and right to the left and right wheels of the Robot.
   obedient.attachServo();
+  // Default unit to use is second.
+  unit = 0;
   // setup PC serial port
   pcSerial.begin(9600);
 
