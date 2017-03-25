@@ -203,6 +203,20 @@ class Obedient {
          * this function will be used to implement backward/foward function later
          */
         void move(int dir, int s);
+        /*
+         * Speed the Obedient up
+         * The function takes no arguments and return nothing
+         * @postcondition: everytime the speed up function get called
+         * the pulseLeft increases by 25 and pulseRight reduces by 25
+         * @condition will be used so that the pulseLeft is never fall off 1700
+         * and pulseRight never goes below 1300
+         * @example obedient.speedUp() stands for foward for 10 seconds.
+         * @memberof Obedient
+         * @static
+         * @instance
+         * this function will be used to implement speedUp/slowDown function later
+         */
+        void speedUp(int dir, int s);
 
     private:
         /* Declare private variable here
