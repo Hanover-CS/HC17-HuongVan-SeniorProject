@@ -12,6 +12,10 @@ int const pulseLeftDefault = 1600;
 int const pulseRightDefault = 1400;
 int const pulseStop = 1500;
 int const currentSateDefault = -1;
+int const foward = 1;
+int const backward = 0;
+int const left = 1;
+int const right = 0;
 
 /*
  * Create a new `Obedient`
@@ -83,8 +87,8 @@ void Obedient::backwardSecond(int second) {
  * @instance
  */
 void Obedient::stopSecond(int second) {
-    left.writeMicroseconds(1500);
-    right.writeMicroseconds(1500);
+    left.writeMicroseconds(pulseStop);
+    right.writeMicroseconds(pulseStop);
     delay(second * 1000);
 }
 
