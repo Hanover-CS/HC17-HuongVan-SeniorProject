@@ -64,7 +64,22 @@ void Obedient::fowardSecond(int second) {
     move(dirFoward, second);
     // stopSecond(1);
 }
+/*
+ * Direct Obedient to go foward with certain distance.
+ *
+ * @param {integer} distance - distance travel in inches
+ * this has to be a multiple of 10 inches.
+ * @memberof Obedient
+ * @static
+ * @instance
+ */
+void Obedient::fowardDistance(int distance) {
+    int timeTraveled;
 
+    timeTraveled = distance * 160
+    fowardNonStop();
+    delay(timeTraveled);
+}
 /*
  * Direct Obedient to go backward with certain time.
  *
@@ -89,7 +104,7 @@ void Obedient::backwardSecond(int second) {
 void Obedient::stopSecond(int second) {
     left.writeMicroseconds(pulseStop);
     right.writeMicroseconds(pulseStop);
-    delay(second * 1000);
+    // delay(second * 1000);
 }
 
 /**********************Default Movement Functions**********************/
