@@ -132,7 +132,7 @@ void Obedient::backward() {
  * @instance
  */
 void Obedient::turnBackLeft() {
-    turnDegree(1, 180);
+    turnDegree(left, 180);
     stopSecond(1);
 }
 
@@ -143,7 +143,7 @@ void Obedient::turnBackLeft() {
  * @instance
  */
 void Obedient::turnBackRight() {
-    turnDegree(0, 180);
+    turnDegree(right, 180);
     stopSecond(1);
 }
 
@@ -154,7 +154,7 @@ void Obedient::turnBackRight() {
  * @instance
  */
 void Obedient::turnLeft() {
-    turnDegree(1, 90);
+    turnDegree(left, 90);
     stopSecond(1);
 }
 
@@ -165,7 +165,7 @@ void Obedient::turnLeft() {
  * @instance
  */
 void Obedient::turnRight() {
-    turnDegree(0, 90);
+    turnDegree(right, 90);
     stopSecond(1);
 }
 
@@ -176,7 +176,7 @@ void Obedient::turnRight() {
  * @instance
  */
 void Obedient::circleLeft() {
-    turnDegree(1, 360);
+    turnDegree(left, 360);
     stopSecond(1);
 }
 
@@ -187,7 +187,7 @@ void Obedient::circleLeft() {
  * @instance
  */ 
 void Obedient::circleRight() {
-    turnDegree(0, 360);
+    turnDegree(right, 360);
     stopSecond(1);
 }
 
@@ -205,7 +205,7 @@ void Obedient::circleRight() {
  */
 void Obedient::turnDegree(int dir, int degree) {
     degree = (int)(degree / 0.95) * 8;
-    if (dir == 1) {
+    if (dir == left) {
         left.writeMicroseconds(1300);
         right.writeMicroseconds(1300);
         delay(degree);
@@ -229,13 +229,15 @@ void Obedient::turnDegree(int dir, int degree) {
  * this function will be used to implement backward/foward function later
  */
 void Obedient::move(int dir, int s) {
-    if (dir == 1) {
-        left.writeMicroseconds(1600);
-        right.writeMicroseconds(1400);
+    if (dir == foward) {
+        left.writeMicroseconds(pulseLeft);
+        right.writeMicroseconds(pulseRight);
         delay(s * 1000);
     } else {
-        left.writeMicroseconds(1400);
-        right.writeMicroseconds(1600);
+        // To move backward, keep the values of pulseRight and pulseLeft unchanged
+        // however, we assign them to opposite variable.
+        left.writeMicroseconds(pulseRight);
+        right.writeMicroseconds(pulseLeft);
         delay(s * 1000);
     }
 }
