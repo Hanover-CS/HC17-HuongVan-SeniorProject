@@ -302,4 +302,28 @@ void Obedient::speedUp(int dir, int s) {
         pulseLeft = 1700;
     }
 }
+
+/*
+ * Slow the Obedient down
+ * The function takes no arguments and return nothing
+ * @postcondition: everytime the speed up function get called
+ * the pulseLeft decreases by 25 and pulseRight increases by 25
+ * @condition will be used so that the pulseLeft is never fall off 1500
+ * and pulseRight never goes above 1500
+ * @example obedient.slowDown().
+ * @memberof Obedient
+ * @static
+ * @instance
+ * this function will be used to implement speedUp/slowDown function later
+ */
+void slowDown() {
+    pulseLeft = pulseLeft - 25;
+    pulseRight = pulseRight + 25;
+    if (pulseRight > 1500) {
+        pulseRight = 1500;
+    }
+    if (pulseLeft < 1500) {
+        pulseLeft = 1500;
+    }
+}
 /**************************END***********************************************/
