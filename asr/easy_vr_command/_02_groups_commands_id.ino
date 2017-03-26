@@ -1,3 +1,8 @@
+/*
+ * This is the group and command ids.
+ * Since each time eavyvr recognize a word, it will tranform that word into a integer that we can use to direct our Obedient
+ * This module will holds all the constant number that represents for each word in the command library.
+ */
 //Groups and Commands
 enum Groups {
   GROUP_0 = 0, //trigger
@@ -27,7 +32,7 @@ enum Group1 {
   G1_MAINMENU = 7,
 };
 
-// pick a movement
+// pick a movement in Advanced group
 enum Group2 {
   G2_FOWARD = 0,
   G2_BACKWARD = 1,
@@ -46,7 +51,7 @@ enum Group3 {
    G3_5 = 4,
 };
 
-//Basic or Advanced?
+//MainMenu
 enum Group4 {
   G4_BASIC = 0,
   G4_ADVANCED = 1,
@@ -68,7 +73,7 @@ enum Group5 {
   SENSOR_SLOWDOWN = 10,
 };
 
-//List of commands
+//List Group
 enum Group6 {
   LIST_FOWARD = 0,
   LIST_BACKWARD = 1,
@@ -80,7 +85,7 @@ enum Group6 {
   LIST_GO = 8,
 };
 
-//List of commands
+//Unit group
 enum Group7 {
   UNIT_SECOND = 0,
   UNIT_INCH = 1,
