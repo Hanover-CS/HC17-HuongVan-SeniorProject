@@ -5,6 +5,7 @@
 *  This will use commands in basic group to populate the list of actions.
 */
 /**************************End of module introduction ******************************************************/
+#include <QueueArray.h>
 QueueArray<int> listAction;
 
 /* 
