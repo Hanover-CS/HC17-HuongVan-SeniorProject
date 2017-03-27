@@ -1,4 +1,8 @@
-
+/*
+ * basic module
+ * This module will host basic function that will be used to direct the Obedient with basic movement in the basic command library
+ * This will be loaded with action module.
+ */
 /**************************************End of module introduction ******************************************************/
 /* The basic function that will take one parameter of idx indicator and based on the value of idx to determine which function will be called inside itself.
  * The basic function also call tonePlay(1000, 1000) inside it to annouce that it gets the word from the user.
