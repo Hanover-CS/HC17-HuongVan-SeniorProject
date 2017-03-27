@@ -19,6 +19,10 @@ void loop() {
   obedient.foward();
   obedient.stopSecond(5);
 
+  //Test backward fuction non stop
+  obedient.backwardNonStop();
+  
+
   //Test backward fuction it will run for 15 second
   obedient.backward();
   obedient.stopSecond(5);
