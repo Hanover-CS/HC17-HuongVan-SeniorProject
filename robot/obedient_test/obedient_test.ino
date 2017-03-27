@@ -25,6 +25,9 @@ void loop() {
   //Test backward fuction with distance
   obedient.backwardDistance(5);
 
+  //Test foward fuction with distance
+  obedient.fowardDistance(10);
+
   //Test foward fuction non stop
   obedient.fowardNonStop();
   
