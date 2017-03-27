@@ -182,6 +182,16 @@ void test_numeric_turnRight() {
 	}
 }
 
+void test_pick_unit() {
+	// Test called with seconds
+    assert(pickUnit(0) == 0);
+    assert(group == GROUP_2);
+    
+    // Test called with distance
+    assert(pickUnit(1) == 1);
+    assert(group == GROUP_2);
+}
+
 void test_action() {
 	int result, numeric;
 
@@ -264,6 +274,7 @@ int main() {
 	test_numeric_backward();
 	test_numeric_turnLeft();
 	test_numeric_turnRight();
+	test_pick_unit();
 	test_action();
 	return 0;
 }
