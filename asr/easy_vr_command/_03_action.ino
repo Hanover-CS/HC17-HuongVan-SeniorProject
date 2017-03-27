@@ -1,3 +1,8 @@
+/*
+ * This is the action module
+ * The module that will hold the action function - function that will direct Obedient based on what word easyvr recognizes.
+ * The module will be loaded in easy_vr_command module
+ */
 /**************************************End of module introduction ******************************************************/
 // Declare the subgroup indicator for group 3 and group 4.
 int g;
@@ -39,8 +44,10 @@ void action(){
 }
 
 /*
- * trigger function take no argument and will set the group indicator to GROUP_4, list of option. Also it will call tonePlay(1500, 1000)
- * to announce that it gets the word from user. It only work if idx = G0_OBEDIENT
+ * trigger function trigger and wake the Obedient up and ready for the commands. 
+ * @param {integer} idx - the idx that eavyvr will pass to whenever it can recognize a word from user
+ * The function will set the group indicator to GROUP_4, list of option. 
+ * Also it will call tonePlay(1500, 1000)to announce that it gets the word from user. It only work if idx = G0_OBEDIENT
  */
 void trigger(int idx) {
     if (idx == G0_OBEDIENT) {
@@ -49,10 +56,12 @@ void trigger(int idx) {
     }
 }
 
-/* This is the function that handle the user's choices between basic or advanced commands
+/* mainMenu function
+ *  This is the function that handle the user's choices between basic or advanced commands
  * then it will direct the flow to the corresponding place to tell what Obedient should obey
  * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
  * it will set the group to the value corresponding to basic and advanced group of commands.
+ * @param {integer} idx - the idx stores value that easyvr passes when it recognize a word from user
  */
 void mainMenu(int idx) {
     switch(idx) {
@@ -78,6 +87,13 @@ void mainMenu(int idx) {
     }
 }
 
+/*
+ * sensorOrBasicOrList function
+ * Since the three module `sensor`, `basic` and `list` will use the same command library since they will direct the Obedient with the same movement.
+ * I decided to use the three module with the same command group id, that is the reason we need this function to actually determine what module we really want
+ * to call at the time.
+ * @param {integer} choice - that will tell which module to be loaded.
+ */
 void sensorOrBasicOrList(int choice) {
     switch(choice) {
         case GROUP_1:
