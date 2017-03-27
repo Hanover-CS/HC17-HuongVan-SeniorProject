@@ -218,28 +218,58 @@ int numberRecognized(int idx) {
 int action(int group, int idx) {
 	switch(group) {
 	    case GROUP_0:
-			trigger(idx);
-			break;
-		case GROUP_1:
-			basic(idx);
-			break;
-		case GROUP_2:
-			if (id != -1) {
-				funID = pickMovement(idx);
-			}
-			else {
-				group = GROUP_3;
-			}
-			break;
-		case GROUP_3:
-			id = numberRecognized(idx);
-			action (GROUP_2, funID);
-			break;
-		case GROUP_4:
-		    mainMenu(idx);
-		    break;
-		case GROUP_7:
-		    pickUnit(idx);
-		    break;
+            trigger(idx);
+            break;
+        case GROUP_1:
+            basic(idx);
+            break;
+        case GROUP_2:
+		    if (id != -1) {
+		        funID = pickMovement(idx);
+			} else {
+                group = GROUP_3;
+            }
+            break;
+        case GROUP_3:
+            id = numberRecognized(idx);
+            action (GROUP_2, funID);
+            break;
+        case GROUP_4:
+            mainMenu(idx);
+            break;
+        case GROUP_7:
+            pickUnit(idx);
+            break;
 	}
+}
+
+/* mainMenu function
+ *  This is the function that handle the user's choices between basic or advanced commands
+ * then it will direct the flow to the corresponding place to tell what Obedient should obey
+ * This is only work if we passed the right idx, which is 0 for "basic" and 1 for "advanced"
+ * it will set the group to the value corresponding to basic and advanced group of commands.
+ * @param {integer} idx - the idx stores value that easyvr passes when it recognize a word from user
+ */
+void mainMenu(int idx) {
+    switch(idx) {
+        case G4_BASIC:
+            tonePlay(1500, 1000);
+            group = GROUP_1;
+            g = GROUP_1;
+            break;
+        case G4_ADVANCED:
+            tonePlay(1000, 1000);
+            group = GROUP_2;
+            break;
+        case G4_SENSOR:
+            tonePlay(1200, 1000);
+            group = GROUP_1;
+            g = GROUP_5;
+            break;
+        case G4_LIST:
+            tonePlay(1200, 1000);
+            group = GROUP_1;
+            g = GROUP_6;
+            break;
+    }
 }
