@@ -221,5 +221,9 @@ I use [Github](github.com) to control the version of the project.
 
 If you have any issues, please post them [here](https://github.com/vanh17/hc07-Obedient/issues)
 
+##Built With:
+1. [Arduino Language](https://www.arduino.cc/en/Reference/HomePage)
+2. [C++](http://www.cplusplus.com/)
+
 ##Author:
 [Hoang Van](https://github.com/vanh17/)
