@@ -184,7 +184,35 @@ Example:
 1. "List" .... beep(sound from the `Obedient`) ... "Foward" ...beep ..."Backward"...beep...."Go" ... beep...: will direct the Obedient to move foward for five seconds, then move backward for 5 seconds then stop.
 2. "List" .... beep....."Backward".....beep... "Left" ...beep "Foward" ... beep ... "Right".... beep ...."back right" .... beep....."back left"....beep...."Go"....beep: will direct the Obedient to move backward, then turn left, followed by fowarding, turn right and finally turn back from the right then `Obedient` resume to stop..
 
+##Small Demo Talks:
+Please follow this small demo talk to play with the `Obedient`, you are free to create your own script by combining different commands together. However, for your convenience, I make one for you:
+1. "Obedient" : 
 
+this will wake the `Obedient` up. Wait a beep before say the next command
+2. "Advance"...beep..."Foward"....beep...."Three"...beep: 
+
+this will turn on the advanced mode and ask the `Obedient` to move foward for three seconds.
+3. "Pick Unit"...beep..."Inch"...beep...."Foward"...beep...."Five": 
+
+this will change the unit from second to inch and ask `Obedient` to go foward now for 5 inches.
+4. "Left"...beep..."Two": 
+
+this will ask `Obedient` to turn left 100 degree.
+5. "Right"... beep .. "Five":
+
+this will ask `Obedient to turn right 250 degree.
+6. "Main Menu": 
+
+get back to the list of modes from which we can choose
+7. "Basic"...beep...."Left".....beep...wait...."Right"......beep...wait..."Foward"....beep....wait..."Backward"....beep....wait....."Back left"....beep...wait...."Back Right"....beep...wait..."Main Menu": 
+
+this will turn on the basic mode in the `Obedient`, then it will start by turning left, we has to wait until the action occurs before starting the next command. Turning right is followed, then `Obedient` will move foward next. Then backward. After finishing backward, it will turn back from the left and finally turn back from the right. The "main menu" in the end of the sequence get us back to list of modes.
+8. "Sensor"...beep..."Foward"...."Backward"......"Left"........"Back Left"....."Foward"....."Right"....."Stop"....."Back right": 
+
+this will turn on the sensor mode. Then the `Obedient` start to move foward, the action keep continue until it hears next command. Then it will go backward and keep doing that until it hears "left", then turn left, and keep moving backward. Then it will turn back from the left and keep moving backward. It then change the moving direction to go foward, then turn right and keep moving foward until it hears "Stop", the `Obedient` is put into halt. It then waiting for the next command or simply say "main menu" to get back to the list of modes.
+9. "List"....."Foward"...."Right"....."Back Left"...."Back Right"....."Backward"....."Left"...."Go":
+
+This will turn on the list mode. Then we give it commands in this order and end it by the trigger word "Go". Then the `Obedient` will follow this list of Action in the same order: foward, then turn right, turn back from the left, then turn back from the right, moving backward, turn left and then stop. Waiting for the next list of commands or simply say "main menu" to get back to the list of modes. 
 ##Versioning:
 
 I use [Github](github.com) to control the version of the project.
