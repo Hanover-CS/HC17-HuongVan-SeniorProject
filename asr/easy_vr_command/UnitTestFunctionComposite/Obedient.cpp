@@ -41,6 +41,13 @@ int Obedient::backwardSecond(int second)
   	return move(0, second);	
 }
 
+//Backward with Distance
+int Obedient::backwardDistance(int distance)
+{
+ 	distance = distance * 1620 / 10 // Formula that captures the distance. We need 1620 ms to travel 10 inches.
+ 	return move(0, distance);
+}
+
 //Stop with Second
 void Obedient::stopSecond(int second)
 {
