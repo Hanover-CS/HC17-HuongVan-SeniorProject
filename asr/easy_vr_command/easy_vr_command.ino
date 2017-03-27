@@ -130,22 +130,8 @@ void action();
 void loop() {
     // Flashing the LED on robot to announce that it is waiting for a commad
     flashLED();
-    // Flashing the LED on easyvr shield to annouce that easyvr is waiting for a command
-    if (easyvr.getID() < EasyVR::EASYVR3)
-        easyvr.setPinOutput(EasyVR::IO1, HIGH); // LED on (listening)
-    Serial.print("Say a command in Group ");
-    Serial.println(group);
-    easyvr.recognizeCommand(group);
-
-    // You can add some thing you want the 
-    do {
-        // can do some processing while waiting for a spoken command
-    }
-    while (!easyvr.hasFinished());
-  
-    if (easyvr.getID() < EasyVR::EASYVR3)
-        easyvr.setPinOutput(EasyVR::IO1, LOW); // LED off
-
+    // Assigining the flow to the right group
+    assignGroup();
     idx = easyvr.getWord();
     if (idx >= 0) {
         // built-in trigger (ROBOT)
@@ -189,5 +175,28 @@ void flashLED() {
     delay(500);
     digitalWrite(7, LOW);
     delay(500); 
+}
+
+/*
+ * startRecognizing function
+ * This function will setup easyvr to the right group of command. Since each time we direct the easyvr we may change the value of
+ * `group` indicator. This function will always put the flow in the right group when changes made.
+ * no arguments and no return
+ */
+void assignGroup() {
+    if (easyvr.getID() < EasyVR::EASYVR3)
+        easyvr.setPinOutput(EasyVR::IO1, HIGH); // LED on (listening)
+    Serial.print("Say a command in Group ");
+    Serial.println(group);
+    easyvr.recognizeCommand(group);
+
+    // You can add some thing you want the 
+    do {
+        // can do some processing while waiting for a spoken command
+    }
+    while (!easyvr.hasFinished());
+  
+    if (easyvr.getID() < EasyVR::EASYVR3)
+        easyvr.setPinOutput(EasyVR::IO1, LOW); // LED off   
 }
 
