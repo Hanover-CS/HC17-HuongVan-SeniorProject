@@ -22,6 +22,10 @@ class Obedient
 		//Methods with quantity
 		int fowardSecond(int second);
 		int backwardSecond(int second);
+		int fowardDistance(int distance);
+		int backwardDistance(int distance);
+		int fowardNonStop();
+		int backwardNonStop();
 		void stopSecond(int second);
 
 		//Methods without quantity
