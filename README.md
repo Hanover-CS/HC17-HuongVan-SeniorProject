@@ -39,6 +39,56 @@ For more information, please check out the link below as the instruction how to 
 
 After placing Obedient library into your libraries repository, now you can include the "Obedient.h" in your sketch.
 
+The asr:
+
+There is a sketch that you can use as an interface between Robot and ASR. This sketch can be found [here](https://github.com/vanh17/hc07-Obedient/tree/master/asr/easy_vr_command). It will automatically load all needed modules that are also created at the same repository. Simply open the sketch with Arduino software, compile and upload the sketch to your robot.
+
+Before running any tests on the `Obedient`, make sure that you train your Obedient with custom words. To do this please follow this construction:
+
+1. Download [EasyVR commander](http://www.veear.eu/downloads/), this is where you can train your robot with custom command.
+2. Plug the Obedient to the laptop and open EasyVR commander, make sure the **PROC** is placed at **SW** port. This is important, if you want to work with EasyVR commander, the **PROC** has to be at **SW**. When you want to upload the code written in Arduino, the **PROC** has to be set to **PC**. Failed to so will make the Obedient cannot connect to your working laptop.
+3. Training the Obedient with this list of commands in the following order:
+. GROUP 0: TRIGGER
+1. OBEDIENT: this is the trigger command
+. GROUP 1: BASIC
+1. FOWARD
+2. BACKWARD
+3. LEFTTURN
+4. RIGHTTURN
+5. BACKLEFT
+6. BACKRIGHT
+7. STOP
+8. MAINMENU
+9. GO
+10. UPSPEED
+11. DOWNSPEED
+. GROUP 2: ADVANCED
+1. FOWARD
+2. BACKWARD
+3. LEFTTURN
+4. RIGHTURN
+5. PICKUNIT
+6. MAINMENU
+. GROUP 3: NUMBERS
+1. ONE
+2. TWO
+3. THREE
+4. FOUR
+5. FIVE
+. GROUP 4: MAINMENU
+1. BASIC
+2. ADVANCED
+3. SENSOR
+4. LIST
+. GROUP 7: UNITS
+1. SECOND
+2. INCH
+
+###Tips for this part:
+1. When you place robot board, EasyVR shield, and Arduino board makes sure that you place the EasyVR on top of the Arduino board, and then the robot board on top of the EasyVR. So the right order is bottom Arduino board, EasyVR middle, and Robot board is on top.
+2. Besides the microphone, there is another thing that has one end is the white little box and the other are two chords. Make sure that you plug that into your EasyVR shield and connect the two chords: one to the **GND** port on the left side, and the other one to **IOREF**
+3. Also you want to centralize the Robot wheel for the better performance. Check this [manual](https://www.parallax.com/sites/default/files/downloads/28125-Robotics-With-The-Boe-Bot-v3.0.pdf) how to centralize robot wheels
+
 ##How to use the [Obedient library](https://github.com/vanh17/hc07-Obedient/):
 
 Check out the test file in robot/test for how to include "Obedient.h" in your sketch.
