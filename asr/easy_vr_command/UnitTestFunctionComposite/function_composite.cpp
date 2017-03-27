@@ -285,7 +285,7 @@ int mainMenu(int idx) {
  * to call at the time.
  * @param {integer} choice - that will tell which module to be loaded.
  */
-void sensorOrBasicOrList(int choice) {
+int sensorOrBasicOrList(int choice) {
     switch(choice) {
         case GROUP_1:
             return basic(idx);
