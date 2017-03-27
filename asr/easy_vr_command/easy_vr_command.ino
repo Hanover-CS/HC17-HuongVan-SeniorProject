@@ -132,37 +132,8 @@ void loop() {
     flashLED();
     // Assigining the flow to the right group
     assignGroup();
-    idx = easyvr.getWord();
-    if (idx >= 0) {
-        // built-in trigger (ROBOT)
-        // group = GROUP_X; <-- jump to another group X
-        return;
-    }
-    idx = easyvr.getCommand();
-    if (idx >= 0) {
-        // print debug message
-        uint8_t train = 0;
-        char name[32];
-        Serial.print("Command: ");
-        Serial.print(idx);
-        if (easyvr.dumpCommand(group, idx, name, train)) {
-            Serial.print(" = ");
-            Serial.println(name);
-        } else
-            Serial.println();
-            // perform some action based on what easyvr can recognize
-            action();
-    }
-    // errors or timeout or not recognized words
-    else {
-        if (easyvr.isTimeout())
-            Serial.println("Timed out, try again...");
-        int16_t err = easyvr.getError();
-        if (err >= 0) {
-            Serial.print("Error ");
-            Serial.println(err, HEX);
-        }
-    }
+    // Processing the word recognized 
+    processingCommand();
 }
 
 /*
@@ -198,5 +169,44 @@ void assignGroup() {
   
     if (easyvr.getID() < EasyVR::EASYVR3)
         easyvr.setPinOutput(EasyVR::IO1, LOW); // LED off   
+}
+
+/*
+ * processingCommand function
+ * This function will help to process the word recognized by easyvr and then call the action function 
+ * to direct Obedient to perform approriate movement.
+ */
+void processingCommand() {
+    idx = easyvr.getWord();
+    if (idx >= 0) {
+        // built-in trigger (ROBOT)
+        // group = GROUP_X; <-- jump to another group X
+        return;
+    }
+    idx = easyvr.getCommand();
+    if (idx >= 0) {
+        // print debug message
+        uint8_t train = 0;
+        char name[32];
+        Serial.print("Command: ");
+        Serial.print(idx);
+        if (easyvr.dumpCommand(group, idx, name, train)) {
+            Serial.print(" = ");
+            Serial.println(name);
+        } else
+            Serial.println();
+            // perform some action based on what easyvr can recognize
+            action();
+    }
+    // errors or timeout or not recognized words
+    else {
+        if (easyvr.isTimeout())
+            Serial.println("Timed out, try again...");
+        int16_t err = easyvr.getError();
+        if (err >= 0) {
+            Serial.print("Error ");
+            Serial.println(err, HEX);
+        }
+    }  
 }
 
