@@ -320,3 +320,16 @@ int pickUnit(int idx) {
 
     return unit; 
 }
+
+/* This is the function that will help numberRecognized function to determine what unit it should call with the foward and backward function.
+ * @param {integer} val - the value that spoken to numberRecognized function and will be the value that will call with fowardSecond or fowardDistance
+ * @param {integer} unit - the value that determines what unit we are going to use
+ * The function will return nothing but will call an approriate function that will directs Obedient.
+ */
+int fowardWithUnit(int val, int unit) {
+    if (unit == UNIT_SECOND) {
+        return obedient.fowardSecond(val);        
+    } else {
+        return obedient.fowardDistance(val * 10); // since val will be from 1-5 but we want 1 represent for 10 inch.   
+    }
+}
