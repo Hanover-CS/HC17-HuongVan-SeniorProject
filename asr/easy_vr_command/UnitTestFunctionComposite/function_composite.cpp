@@ -109,22 +109,27 @@ int basic(int idx) {
 }
 
 /* This is the function that direct to appropriate functions with numbers
-*  This is only work if we passed the approriate idx's, which is 0-3, and not working
-*  at all for other cases
+*  This is only work if we passed the approriate idx's
 */
 int pickMovement(int idx) {
     switch(idx) {
         case G2_FOWARD:
-            return G2_FOWARD;
+            group = G2_FOWARD;
+            return group;
         case G2_BACKWARD:
-            return G2_BACKWARD;
+            group = G2_BACKWARD;
         case G2_RIGHTTURN:
-            return G2_RIGHTTURN;
+            group = G2_RIGHTTURN;
         case G2_LEFTTURN:
-            return G2_LEFTTURN;
+            group = G2_LEFTTURN;
+        case G2_PICKUNIT:
+            group = G2_PICKUNIT;
+        case G2_MAINMENU:
+            group = G2_MAINMENU;
+
     }
 	
-    return -1;
+    return group;
 }
 
 /* This is the function that passed argument to forward function that will tell Obedient
