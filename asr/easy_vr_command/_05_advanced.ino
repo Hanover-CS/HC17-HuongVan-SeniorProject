@@ -1,3 +1,9 @@
+/*
+ * Advance module
+ * This module hosts advanced group functions. It will help the user to pick what movement they want obedient to perform and
+ * also how they want it to perform them in number (degree/ distance/ time)
+ * This module will be loaded with action module
+ */
 /**************************************End of module introduction ******************************************************/
 /* This is the function that direct to appropriate functions with numbers
 *  This is only work if we passed the approriate idx's, which is 0-4, and not working
@@ -56,11 +62,11 @@ void numberRecognized(int idx) {
             backwardWithUnit(val, unit);
             break;
         case G2_LEFTTURN:
-            obedient.turnDegree(1, val * 10);
+            obedient.turnDegree(1, val * 50);
             obedient.stop();
             break;
         case G2_RIGHTTURN:
-            obedient.turnDegree(0, val * 10);
+            obedient.turnDegree(0, val * 50);
             obedient.stop();
             break;
     }
