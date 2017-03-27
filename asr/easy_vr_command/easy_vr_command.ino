@@ -56,6 +56,9 @@ Obedient obedient(10, 11);
  * This function takes no argument and return nothing
  */
 void setup() {
+    // Attach indicating LED to pin
+    // This LED will help us to determine when to say a command.
+    pinMode(7, OUTPUT);
     //Attach servo left and right to the left and right wheels of the Robot.
     obedient.attachServo();
     // Default unit to use is second.
@@ -125,9 +128,11 @@ void action();
  * We will then call the action() on what easyvr recognize. The action function will be loaded to this modul through _03_action.ino
  */
 void loop() {
+    // Flashing the LED on robot to announce that it is waiting for a commad
+    flashLED();
+    // Flashing the LED on easyvr shield to annouce that easyvr is waiting for a command
     if (easyvr.getID() < EasyVR::EASYVR3)
         easyvr.setPinOutput(EasyVR::IO1, HIGH); // LED on (listening)
-  
     Serial.print("Say a command in Group ");
     Serial.println(group);
     easyvr.recognizeCommand(group);
@@ -174,4 +179,10 @@ void loop() {
     }
 }
 
+void flashLED() {
+    digitalWrite(7, HIGH);
+    delay(500);
+    digitalWrite(7, LOW);
+    delay(500); 
+}
 
