@@ -97,4 +97,11 @@ int pickUnit(int idx);
  */
 int fowardWithUnit(int val, int unit);
 
+/* This is the function that will help numberRecognized function to determine what unit it should call with the backward function.
+ * @param {integer} val - the value that spoken to numberRecognized function and will be the value that will call with backward or backwardDistance
+ * @param {integer} unit - the value that determines what unit we are going to use
+ * The function will return nothing but will call an approriate function that will directs Obedient.
+ */
+int backwardWithUnit(int val, int unit);
+
 #endif
