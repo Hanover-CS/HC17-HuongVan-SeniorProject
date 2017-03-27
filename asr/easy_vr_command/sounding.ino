@@ -5,5 +5,5 @@
  */
 void tonePlay(int sound1, int frequency) {
    tone(5, sound1, frequency);
-   delay(10);
+   delay(1);
 }
