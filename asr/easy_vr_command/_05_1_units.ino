@@ -1,3 +1,9 @@
+/*
+ * unit module
+ * This module hosts the pickUnit function. That will help to pick the right unit in advanced command. Since the users can decide what
+ * units of measurement they want to use with their commands.
+ * This module will be loaded with advanced module.
+ */
 /**************************************End of module introduction ******************************************************/
 /* This is the function that determine what unit we will use for function in advanced group
 *     0 - all functions work with unit of seconds
