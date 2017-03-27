@@ -407,3 +407,27 @@ int sensor(int idx) {
 
     return currentState;    
 }
+
+/*
+ * resumeToCurrentState.
+ * 
+ * Function will direct the Obedient back to its current when it hears the command for turnning left or right, or back.
+ * @param {integer} current - this will hold the id of the current state and based on it to get the `Obedient` back to
+ * its origial states.
+ */
+int resumeToCurrentState(int current) {
+    switch(current) {
+        case DEFAULT_STATE:
+            return obedient.stop();
+            break;
+        case FOWARD:
+            return obedient.fowardNonStop();
+            break;
+        case BACKWARD:
+            return obedient.backwardNonStop();
+            break;
+        case STOP:
+            return obedient.stop();
+            break;  
+    }
+}
