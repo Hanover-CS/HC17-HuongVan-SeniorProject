@@ -346,3 +346,64 @@ int backwardWithUnit(int val, int unit) {
         return obedient.backwardDistance(val * 10); // since val will be from 1-5 but we want 1 represent for 10 inch.   
     }
 }
+
+/* The sensor function that will take one parameter of idx indicator and based on the value of idx to determine which function will be called inside itself.
+ * The sensor function also call tonePlay(1000, 1000) inside it to annouce that it gets the word from the user.
+ * The idx will then determine which movement the Obedient will carry out
+ *     if idx = SENSOR_FOWARD, then call foward function, and set current state to 0
+ *     if idx = SENSOR_BACKWARD, then call backward function, and set current state to 1
+ *     if idx = SENSOR_LEFTTURN, then call turnLeft function, DO NOT set current state when call with LEFTTURN
+ *     if idx = SENSOR_RIGHTTURN, then call turnRight function, DO NOT set current state when call with RIGHTTURN
+ *     if idx = SENSOR_TURNBACKLEFT, then call turnBackLeft function, DO NOT set currentState when call with TURNBACKLEFT
+ *     if idx = SENSOR_TURNBACKRIGHT, then call turnBackRight function, DO NOT set current state when call with TURNBACKRIGHT
+ *     if idx = SENSOR_STOP, then call stop function to freeze Obedient, set currentState to 2 
+ *     if idx = SENSOR_MAIN, set group back to list of option (GROUP_4)
+ * We will use switch structure to recognize each case based on the value of idx.
+ * Because we want the Obedient will keep doing what it was doing after being discontinued we will use fowardSecond and backwardSecond instead of default foward and backward
+ * The function will return nothing.     
+ */ 
+int sensor(int idx) {
+    int currentState;
+    
+    tonePlay(1000, 1000);
+    switch(idx) {
+        case SENSOR_FOWARD:
+            obedient.fowardNonStop();
+            obedient.setCurrentState(FOWARD);
+            break;
+        case SENSOR_BACKWARD:
+            obedient.backwardNonStop();
+            obedient.setCurrentState(BACKWARD);
+            break;
+        case SENSOR_LEFTTURN:
+            obedient.turnLeft();
+            break;
+        case SENSOR_RIGHTTURN:
+            obedient.turnRight();
+            break;
+        case SENSOR_BACKLEFT:
+            obedient.turnBackLeft();
+            break;
+        case SENSOR_TURNBACKRIGHT:
+            obedient.turnBackRight();
+            break;
+        case SENSOR_STOP:
+            obedient.stop();
+            obedient.setCurrentState(STOP);
+            break;
+        case SENSOR_SPEEDUP:
+            obedient.speedUp();
+            break;
+        case SENSOR_SLOWDOWN:
+            obedient.slowDown();
+            break;
+        case SENSOR_MAINMENU:
+            group = GROUP_4;
+            obedient.reset();         
+            break;   
+    }
+    currentState = obedient.getCurrentState();
+    resumeToCurrentState(currentState);
+
+    return currentState;    
+}
