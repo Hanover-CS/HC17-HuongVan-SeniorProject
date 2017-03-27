@@ -192,6 +192,41 @@ void test_pick_unit() {
     assert(group == GROUP_2);
 }
 
+void test_sensor() {
+	// Test called with foward
+    assert(sensor(0) == 0);
+    assert(group == GROUP_5);
+    
+    // Test called with backward
+    assert(pickUnit(1) == 1);
+    assert(group == GROUP_5);
+
+    // Test called with turn left currentState does not change from last call
+    assert(pickUnit(2) == 1);
+    assert(group == GROUP_5);
+
+    // Test called with turn right currentState does not change from last call
+    assert(pickUnit(3) == 1);
+    assert(group == GROUP_5);
+
+    // Test called with stop will change currentState
+    assert(pickUnit(6) == 2);
+    assert(group == GROUP_5);
+
+    // Test called with speedup will change currentState
+    assert(pickUnit(9) == 2);
+    assert(group == GROUP_5);
+
+    // Test called with speedup will change currentState
+    assert(pickUnit(10) == 2);
+    assert(group == GROUP_5);
+
+    // Test called with foward then speedup will change currentState
+    assert(pickUnit(0) == 0);
+    assert(pickUnit(10) == 0);
+    assert(group == GROUP_5);
+}
+
 void test_action() {
 	int result, numeric;
 
@@ -275,6 +310,7 @@ int main() {
 	test_numeric_turnLeft();
 	test_numeric_turnRight();
 	test_pick_unit();
+	test_sensor();
 	test_action();
 	return 0;
 }
