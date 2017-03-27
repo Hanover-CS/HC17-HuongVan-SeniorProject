@@ -247,6 +247,8 @@ int main() {
 	test_basic();
 	test_numeric();
 	test_numeric_foward();
+	test_distance_backward();
+	test_distance_foward();
 	test_numeric_backward();
 	test_numeric_turnLeft();
 	test_numeric_turnRight();
