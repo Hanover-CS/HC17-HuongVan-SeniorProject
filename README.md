@@ -9,6 +9,13 @@ Goals of this project are to be able to direct movement of the robot using speec
 ##Prerequisites
 You will need to download and place the [EasyVR library](https://github.com/RoboTech-srl/EasyVR-Arduino/releases/download/v1.9.1/EasyVR-Arduino-library-1.9.1.zip) into your Arduino libraries.
 Also, need to run the small demo from [EasyVR library](http://www.veear.eu/files/EasyVR%203%20User%20Manual%201.0.14.pdf) before proceeding with this project.
+Download the [Obedient library](https://github.com/vanh17/hc07-Obedient) and place it into your Arduino libraries folder.
+Download the [QueueArray](http://playground.arduino.cc/Code/QueueArray#Creation) and place it into your Arduino libraries folder. This library will help to implement the module that direct Obedient with multiple commands.
+
+###Tips for this part:
+1. Make sure that you have a latest version of Arduino softward and EasyVR library. Follow the link included to get the version that this project is built on.
+2. The EasyVR **WILL NOT WORKING** until you have it soldered. You may find this video [how to solder](https://www.youtube.com/watch?v=oqV2xU1fee8)
+3. Before working with the robot, make sure that you have your EasyVR shield can do a [small test with LED](https://github.com/vanh17/hc07-Obedient/tree/master/asr/asr_led_control).
 
 ##Getting Started:
 
