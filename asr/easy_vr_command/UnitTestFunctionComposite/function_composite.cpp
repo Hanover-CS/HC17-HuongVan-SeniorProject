@@ -138,6 +138,32 @@ int foward_with_time() {
 	return result;
 }
 
+/* This is the function that passed argument to forward function that will tell Obedient
+*  to move forward for that distance
+*  This is only work if we passed the approriate idx's, which is 0-19, and not working
+*  at all for other cases
+*/
+int foward_with_distance() {
+	int result;
+	
+	result = obedient.fowardDistance(id);
+
+	return result;
+}
+
+/* This is the function that passed argument to forward function that will tell Obedient
+*  to move forward for that distance
+*  This is only work if we passed the approriate idx's, which is 0-19, and not working
+*  at all for other cases
+*/
+int backward_with_distance() {
+	int result;
+	
+	result = obedient.backwardDistance(id);
+
+	return result;
+}
+
 /* This is the function that passed argument to backward function that will tell Obedient
 *  to move forward for that seconds of time
 *  This is only work if we passed the approriate idx's, which is 0-19, and not working
