@@ -62,12 +62,13 @@ obedient.attachServo();
 * at all for other cases
 */
 int trigger(int idx) {
-	switch(idx) {
-	    case G0_OBEDIENT:
-		    group = GROUP_1;
-	}
+    switch(idx) {
+        case G0_OBEDIENT:
+            group = GROUP_1;
+    }
 
-	return group;
+
+    return group;
 }
 
 /* This is the function that handle the user's choices between basic or advanced commands
@@ -76,12 +77,12 @@ int trigger(int idx) {
  * it will set the group to the value corresponding to basic and advanced group of commands.
  */
 void basicOrAdvanced(int idx) {
-	switch(idx) {
-		case G4_BASIC:
-		    group = GROUP_1;
-		case G4_ADVANCE:
-		    group = GROUP_2;
-	}
+    switch(idx) {
+        case G4_BASIC:
+            group = GROUP_1;
+        case G4_ADVANCE:
+            group = GROUP_2;
+    }
 }
 
 /* This is the function that handle the basic movements of the Obedient
@@ -89,21 +90,22 @@ void basicOrAdvanced(int idx) {
 *  at all for other cases
 */
 int basic(int idx) {
-	switch(idx) {
-	    case G1_FOWARD:
-			return obedient.foward();
-		case G1_BACKWARD:
-			return obedient.backward();
-		case G1_LEFTTURN:
-			return obedient.turnLeft();
-		case G1_RIGHTTURN:
-			return obedient.turnRight();
-		case G1_TURNBACKLEFT:
-			return obedient.turnBackLeft();
-		case G1_TURNBACKRIGHT:
-			return obedient.turnBackRight();
-	}
-	return -1;
+    switch(idx) {
+        case G1_FOWARD:
+            return obedient.foward();
+        case G1_BACKWARD:
+            return obedient.backward();
+        case G1_LEFTTURN:
+            return obedient.turnLeft();
+        case G1_RIGHTTURN:
+            return obedient.turnRight();
+        case G1_TURNBACKLEFT:
+            return obedient.turnBackLeft();
+        case G1_TURNBACKRIGHT:
+            return obedient.turnBackRight();
+    }
+
+    return -1;
 }
 
 /* This is the function that direct to appropriate functions with numbers
@@ -111,18 +113,18 @@ int basic(int idx) {
 *  at all for other cases
 */
 int pickMovement(int idx) {
-	switch(idx) {
-	    case G2_FOWARD:
-			return G2_FOWARD;
-		case G2_BACKWARD:
-			return G2_BACKWARD;
-		case G2_RIGHTTURN:
-			return G2_RIGHTTURN;
-		case G2_LEFTTURN:
-			return G2_LEFTTURN;
-	}
+    switch(idx) {
+        case G2_FOWARD:
+            return G2_FOWARD;
+        case G2_BACKWARD:
+            return G2_BACKWARD;
+        case G2_RIGHTTURN:
+            return G2_RIGHTTURN;
+        case G2_LEFTTURN:
+            return G2_LEFTTURN;
+    }
 	
-	return -1;
+    return -1;
 }
 
 /* This is the function that passed argument to forward function that will tell Obedient
@@ -131,11 +133,11 @@ int pickMovement(int idx) {
 *  at all for other cases
 */
 int foward_with_time() {
-	int result;
-	
-	result = obedient.fowardSecond(id);
+    int result;
 
-	return result;
+    result = obedient.fowardSecond(id);
+
+    return result;
 }
 
 /* This is the function that passed argument to forward function that will tell Obedient
@@ -144,11 +146,11 @@ int foward_with_time() {
 *  at all for other cases
 */
 int foward_with_distance() {
-	int result;
+    int result;
 	
-	result = obedient.fowardDistance(id);
+    result = obedient.fowardDistance(id);
 
-	return result;
+    return result;
 }
 
 /* This is the function that passed argument to forward function that will tell Obedient
@@ -157,11 +159,11 @@ int foward_with_distance() {
 *  at all for other cases
 */
 int backward_with_distance() {
-	int result;
-	
-	result = obedient.backwardDistance(id);
+    int result;
 
-	return result;
+    result = obedient.backwardDistance(id);
+
+    return result;
 }
 
 /* This is the function that passed argument to backward function that will tell Obedient
@@ -170,11 +172,11 @@ int backward_with_distance() {
 *  at all for other cases
 */
 int backward_with_time() {
-	int result;
+    int result;
 
-	result = obedient.backwardSecond(id);
+    result = obedient.backwardSecond(id);
 
-	return result;
+    return result;
 }
 
 /* This is the function that passed argument to turnLeft function that will tell Obedient
@@ -183,11 +185,11 @@ int backward_with_time() {
 *  at all for other cases
 */
 int turnLeft_with_degree() {
-	int result;
+    int result;
 
-	result = obedient.turnLeftDegree(id * 10);
+    result = obedient.turnLeftDegree(id * 10);
 
-	return result;
+    return result;
 }
 
 /* This is the function that passed argument to turnRight function that will tell Obedient
@@ -196,17 +198,17 @@ int turnLeft_with_degree() {
 *  at all for other cases
 */
 int turnRight_with_degree() {
-	int result;
+    int result;
 
-	result = obedient.turnRightDegree(id * 10);
+    result = obedient.turnRightDegree(id * 10);
 
-	return result;
+    return result;
 }
 
 /* This is the function that recognizes a number said to the Obedient
 */
 int numberRecognized(int idx) {
-	return idx;
+    return idx;
 }
 
 /* This is the function that passed argument to action that where the Obedient will take the input from users
@@ -250,7 +252,7 @@ int action(int group, int idx) {
  * it will set the group to the value corresponding to basic and advanced group of commands.
  * @param {integer} idx - the idx stores value that easyvr passes when it recognize a word from user
  */
-void mainMenu(int idx) {
+int mainMenu(int idx) {
     switch(idx) {
         case G4_BASIC:
             tonePlay(1500, 1000);
