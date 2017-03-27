@@ -48,6 +48,17 @@ int Obedient::backwardDistance(int distance)
  	return move(0, distance);
 }
 
+//Backward with Distance
+int Obedient::backwardNonstop(int distance)
+{
+ 	return 1;
+}
+
+int Obedient::fowardNonstop(int distance)
+{
+ 	return 0;
+}
+
 //Stop with Second
 void Obedient::stopSecond(int second)
 {
