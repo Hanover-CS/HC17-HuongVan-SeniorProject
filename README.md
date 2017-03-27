@@ -108,6 +108,82 @@ These followings are the methods you can use when playing with Obedient:
 	* turnRight();
 	* circleLeft();
 	* circleRight();
+	* fowardNonStop(), this method will help you to set up for the Obedient keep going without stop at all
+	* backwardNonStop(), this method will help you to set up for the Obedient keep going without stop at all
+
+3. Private variables:
+    * left : servo that will attach to the left wheel of the Obedient
+    * right: servo that will attach to the right wheel of the Obedient
+    * currentState: the current state of the Obedient, is it fowarding or backwarding, moving or at stop
+
+You can also add more neccessary functions for your own project by putting your function declaration in `Obedient.h` file and then implement the function inside `Obedient.cpp` file.
+
+##How to use the [Easy_vr_commands](https://github.com/vanh17/hc07-Obedient/tree/master/asr/easy_vr_command):
+
+This interface currently has four groups of commands that represents four abilities that Obedient can do. After awakening the `Obedient` by say to it "Obedient", you will have four options to choose.
+
+###Basic commands:
+This group is GROUP_1. To use commands in this group, say 'Basic' to the `Obedient` and wait for the sound announcing that the word recognized.
+1. "Foward", it will direct the `Obedient` to go foward in 5 seconds (default movement)
+2. "Backward", it will direct the `Obedient` to go backward in 5 seconds (default movement)
+3. "Left", it will direct the `Obedient` to turn left.
+4. "Right", it will direct the `Obedient` to turn right.
+5. "Back Left" it will turn `Obedient` back from the left.
+6. "Back Right" it will turn `Obedient` back from the right.
+7. "Main Menu", to go back to the Main Menu of option, simply say this one to the `Obedient`
+
+###Advanced commands:
+This group is GROUP_2. To use commands in this group, say 'Advanced' to the `Obedient` and wait for the sound announcing that the word recognized.
+1. "Foward", it will direct the `Obedient` to go foward
+2. "Backward", it will direct the `Obedient` to go backward
+3. "Left", it will direct the `Obedient` to turn left.
+4. "Right", it will direct the `Obedient` to turn right.
+5. "Pick Unit", it will give you choose option to pick for the foward and backward command. 
+5.1. "Second", the unit will now be in seconds
+5.2. "Inch", the unit will now be in inches
+6. "Main Menu", to go back to the Main Menu of option, simply say this one to the `Obedient`
+
+After picking the movement, the `Obedient` will ask you for the number you want to run with that function.
+1. "one", is for one second/inch in foward/backward function, but will equal to 50 in degree for turning
+2. "two", is for two seconds/inches in foward/backward function, but will equal to 100 in degree for turning
+3. "three", is for three seconds/inches in foward/backward function, but will equal to 150 in degree for turning
+4. "four", is for four seconds/inches in foward/backward function, but will equal to 200 in degree for turning
+5. "five", is for five seconds/inches in foward/backward function, but will equal to 250 in degree for turning
+
+Example: 
+1. "Advanced" .... beep(sound from the `Obedient`) ... "Foward" ...beep ... "Five": will direct the Obedient to move foward in 5 seconds.
+2. "Advanced" .... beep....."Pick Unit".....beep... "Inch" ...beep ... "Foward" ...beep ... "Three": will direct the Obedient to move foward 3 inches.
+3. "Advanced" .... beep(sound from the `Obedient`) ... "Left" ...beep ... "four": will direct the Obedient to turn left 200 degree.
+
+###Sensor commands:
+GROUP_5. To use commands in this group, say 'Sensor' to the `Obedient` and wait for the sound announcing that the word recognized.
+1. "Foward", it will direct the `Obedient` to go foward forever until next command is received
+2. "Backward", it will direct the `Obedient` to go backward until next command is received
+3. "Left", it will direct the `Obedient` to turn left.
+4. "Right", it will direct the `Obedient` to turn right.
+5. "Stop", it will stop the `Obedient` current moving
+6. "Main Menu", go back to the main menu
+
+Example: 
+1. "Sensor" .... beep(sound from the `Obedient`) ... "Foward" ...beep: will direct the Obedient to move foward.
+2. "Sensor" .... beep....."Backward".....beep... "Left" ...beep: will direct the Obedient to move backward until the "left" is recognized, then the `Obedient` turns left and keep moving backward.
+3. "Sensor" .... beep ... "Left" ...beep ... "foward".....beep......"backward"....."Stop"...."right": will direct the Obedient to turn left, then stop, then start to move foward until "backward" is recognized, then start to move backward. The movement continues until "stop" is recognized, then `Obedient` turn right and stop.
+
+###List commands:
+GROUP_6. To use commands in this group, say 'List' to the `Obedient` and wait for the sound announcing that the word recognized.
+1. "Foward", it will direct the `Obedient` to go foward forever until next command is received
+2. "Backward", it will direct the `Obedient` to go backward until next command is received
+3. "Left", it will direct the `Obedient` to turn left.
+4. "Right", it will direct the `Obedient` to turn right.
+5. "Back Left" it will direct the `Obedient` to turn back from the left.
+6. "Back right" it will direct the `Obedient` to turn back from the right.
+5. "Go", it will start the action in the same order said.
+6. "Main Menu", go back to the main menu
+
+Example: 
+1. "List" .... beep(sound from the `Obedient`) ... "Foward" ...beep ..."Backward"...beep...."Go" ... beep...: will direct the Obedient to move foward for five seconds, then move backward for 5 seconds then stop.
+2. "List" .... beep....."Backward".....beep... "Left" ...beep "Foward" ... beep ... "Right".... beep ...."back right" .... beep....."back left"....beep...."Go"....beep: will direct the Obedient to move backward, then turn left, followed by fowarding, turn right and finally turn back from the right then `Obedient` resume to stop..
+
 
 ##Versioning:
 
