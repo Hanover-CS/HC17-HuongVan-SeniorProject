@@ -45,9 +45,16 @@ void listCommand(int idx) {
             doList();
             break;
         case LIST_MAINMENU:
+            tonePlay(1500, 1000);
             group = GROUP_4;
     }      
 }
+/*
+ * doList function
+ * It will keep doing the action stored in listAction until the list is empty
+ * The function has no parameters and return nothing.
+ * The function will pop the item in listAction and pass that value to doAction
+ */
 void doList() {
     int act;
     
@@ -57,6 +64,18 @@ void doList() {
     }
 }
 
+/*
+ * doAction
+ * This function will take one argument, and based on that act id, it will ask the Obedient to perform the action
+ * @param {integer} act - action id:
+ * LIST_FOWARD :  to go foward
+ * LIST_BACKWARD :  to go backward
+ * LIST_LEFTTURN :  to go turn left
+ * LIST_RIGHTTURN: to turn right
+ * LIST_BACKLEFT :  to go BACK LEFT
+ * LIST_BACKRIGHT: to turn back from the right
+ * return nothing
+ */
 void doAction(int act) {
     switch(act) {
         case LIST_FOWARD:
