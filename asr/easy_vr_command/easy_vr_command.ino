@@ -179,6 +179,11 @@ void loop() {
     }
 }
 
+/*
+ * flashLED function
+ * This function will flash the LED to announce the user that the obedient is waiting for the command.
+ * return nothing and take no arguments
+ */
 void flashLED() {
     digitalWrite(7, HIGH);
     delay(500);
