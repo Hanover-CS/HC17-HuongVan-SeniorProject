@@ -235,5 +235,11 @@ int action(int group, int idx) {
 			id = numberRecognized(idx);
 			action (GROUP_2, funID);
 			break;
+		case GROUP_4:
+		    mainMenu(idx);
+		    break;
+		case GROUP_7:
+		    pickUnit(idx);
+		    break;
 	}
 }
