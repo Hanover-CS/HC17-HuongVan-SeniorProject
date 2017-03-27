@@ -71,31 +71,7 @@ int action(int group, int idx);
  * it will set the group to the value corresponding to basic and advanced group of commands.
  * @param {integer} idx - the idx stores value that easyvr passes when it recognize a word from user
  */
-int mainMenu(int idx) {
-    switch(idx) {
-        case G4_BASIC:
-            tonePlay(1500, 1000);
-            group = GROUP_1;
-            g = GROUP_1;
-            break;
-        case G4_ADVANCED:
-            tonePlay(1000, 1000);
-            group = GROUP_2;
-            break;
-        case G4_SENSOR:
-            tonePlay(1200, 1000);
-            group = GROUP_1;
-            g = GROUP_5;
-            break;
-        case G4_LIST:
-            tonePlay(1200, 1000);
-            group = GROUP_1;
-            g = GROUP_6;
-            break;
-    }
-
-    return group;
-}
+int mainMenu(int idx);
 
 /*
  * sensorOrBasicOrList function
@@ -104,7 +80,7 @@ int mainMenu(int idx) {
  * to call at the time.
  * @param {integer} choice - that will tell which module to be loaded.
  */
-int sensorOrBasicOrList(int choice)
+int sensorOrBasicOrList(int choice);
 
 /* This is the function that determine what unit we will use for function in advanced group
 *     0 - all functions work with unit of seconds
@@ -113,5 +89,12 @@ int sensorOrBasicOrList(int choice)
 *  The function will return nothing, but set `unit` variable to corresponding unit.
 */
 int pickUnit(int idx);
+
+/* This is the function that will help numberRecognized function to determine what unit it should call with the foward and backward function.
+ * @param {integer} val - the value that spoken to numberRecognized function and will be the value that will call with fowardSecond or fowardDistance
+ * @param {integer} unit - the value that determines what unit we are going to use
+ * The function will return nothing but will call an approriate function that will directs Obedient.
+ */
+int fowardWithUnit(int val, int unit);
 
 #endif
