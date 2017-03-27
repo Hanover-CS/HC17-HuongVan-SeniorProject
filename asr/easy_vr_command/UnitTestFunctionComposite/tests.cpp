@@ -1,3 +1,15 @@
+/*
+ * test.cpp
+ * This is the test file for the interface between robot and the asr
+ * Since it needs to have the interaction between humand and the asr
+ * so that the shield can send information gained from users to the robot
+ * However, we cannot automatically test system required interaction with human
+ * I decided to modify the function that is used inside the Obedient Library and the
+ * codes that are used in the interface sketch so that each of them will return
+ * specific integer represents for each approriate call of the function.
+ * THis file is to test the logic break down of each function and how it may perform when
+ * call inside the real interface. 
+ */
 #include <iostream>
 #include "function_composite.h"
 #include "obedient.h"
