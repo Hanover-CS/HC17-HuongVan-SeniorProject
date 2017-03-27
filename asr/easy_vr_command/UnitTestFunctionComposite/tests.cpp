@@ -137,6 +137,25 @@ void test_numeric_backward() {
 	}
 }
 
+/* This is a cheat code for function with number:
+*  foward will range 0-19 for the time corresponding of group3 0-19
+*  backward will range 100-119 for the time corresponding group3 0-19 
+*  turnLeft will range 200-219 for the angle corresponding group3 0-19
+*  turnRight will range 300-319 for the angle corresponding group3 0-19
+*/
+void test_distance_foward() {
+	for (int i = 0; i < 20; i++) {
+		id = i;
+		assert(foward_with_distance() == 600 + i);
+	}
+}
+
+void test_distance_backward() {
+	for (int i = 0; i < 20; i++) {
+		id = i;
+		assert(foward_with_distance() == 700 + i);
+	}
+}
 void test_numeric_turnLeft() {
 	for (int i = 0; i < 20; i++) {
 		id = i
