@@ -274,4 +274,27 @@ int mainMenu(int idx) {
             g = GROUP_6;
             break;
     }
+
+    return group;
+}
+
+/*
+ * sensorOrBasicOrList function
+ * Since the three module `sensor`, `basic` and `list` will use the same command library since they will direct the Obedient with the same movement.
+ * I decided to use the three module with the same command group id, that is the reason we need this function to actually determine what module we really want
+ * to call at the time.
+ * @param {integer} choice - that will tell which module to be loaded.
+ */
+void sensorOrBasicOrList(int choice) {
+    switch(choice) {
+        case GROUP_1:
+            return basic(idx);
+            break;
+        case GROUP_5:
+            return sensor(idx);
+            break;
+        case GROUP_6:
+            return listCommand(idx); 
+            break;   
+    }
 }
